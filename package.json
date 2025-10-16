@@ -7,6 +7,8 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
+    "check:format": "prettier . --check --cache",
+    "fix:format": "prettier . --write --cache",
     "check:lint": "eslint",
     "fix:lint": "eslint --fix"
   },
@@ -17,6 +19,7 @@
   },
   "devDependencies": {
     "@alex-grover/eslint-config": "^0.0.8",
+    "@alex-grover/prettier-config": "^0.0.3",
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -29,6 +32,8 @@
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-css-modules": "^2.12.0",
     "eslint-plugin-import": "^2.32.0",
+    "prettier": "3.6.2",
     "typescript": "^5"
-  }
+  },
+  "prettier": "@alex-grover/prettier-config"
 }
