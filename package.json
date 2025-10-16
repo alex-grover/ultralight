@@ -7,6 +7,7 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
+    "format": "prettier --cache --ignore-unknown",
     "check:format": "bun run format --check .",
     "fix:format": "bun run format --write .",
     "lint": "eslint --cache --cache-location node_modules/.cache",
@@ -14,7 +15,8 @@
     "fix:lint": "bun run check:lint --fix",
     "styles": "stylelint --cache --cache-location node_modules/.cache",
     "check:styles": "bun run styles ./**/*.css",
-    "fix:styles": "bun run check:styles --fix"
+    "fix:styles": "bun run check:styles --fix",
+    "check:types": "tsc"
   },
   "dependencies": {
     "react": "19.1.0",
