@@ -25,8 +25,8 @@
   },
   "devDependencies": {
     "@alex-grover/eslint-config": "^0.0.10",
-    "@alex-grover/lefthook-config": "^0.0.4",
-    "@alex-grover/prettier-config": "^0.0.5",
+    "@alex-grover/lefthook-config": "^0.0.5",
+    "@alex-grover/prettier-config": "^0.0.6",
     "@alex-grover/stylelint-config": "^0.0.6",
     "@eslint/eslintrc": "^3.3.1",
     "@tsconfig/next": "^2.0.3",

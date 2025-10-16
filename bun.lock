@@ -10,8 +10,8 @@
       },
       "devDependencies": {
         "@alex-grover/eslint-config": "^0.0.10",
-        "@alex-grover/lefthook-config": "^0.0.4",
-        "@alex-grover/prettier-config": "^0.0.5",
+        "@alex-grover/lefthook-config": "^0.0.5",
+        "@alex-grover/prettier-config": "^0.0.6",
         "@alex-grover/stylelint-config": "^0.0.6",
         "@eslint/eslintrc": "^3.3.1",
         "@tsconfig/next": "^2.0.3",
@@ -42,9 +42,9 @@
   "packages": {
     "@alex-grover/eslint-config": ["@alex-grover/eslint-config@0.0.10", "", { "peerDependencies": { "@eslint/js": "*", "eslint": ">=9.0.0", "eslint-config-prettier": "*", "eslint-plugin-import": "*", "typescript-eslint": "*" } }, "sha512-wWw5Iqi/G5ZPtc+P6ZjP/5x3BCDep+cRoBafXQIA9DMRGWmlSxLl5PmEf2AcEonuVYjvnt3p2x2oBIswub3xtA=="],
 
-    "@alex-grover/lefthook-config": ["@alex-grover/lefthook-config@0.0.4", "", { "peerDependencies": { "lefthook": "*" } }, "sha512-5/sn3k+znMJ+aippIpN2Kl6up/68qW7s8c65e4Ev9u/0fHBnaH5Sq2VLlATceoMXNpzU5wjCszrtvQJa+VyzJg=="],
+    "@alex-grover/lefthook-config": ["@alex-grover/lefthook-config@0.0.5", "", { "peerDependencies": { "lefthook": "*" } }, "sha512-XxJ7yqKVXA0tSMnuoOi3oBp7KUsTpfkSrv5TwKki0Lwtw3WZ12qqt3FjVxwNaZVvjZjW66UXWBZpl/EH/qTDVA=="],
 
-    "@alex-grover/prettier-config": ["@alex-grover/prettier-config@0.0.5", "", { "peerDependencies": { "prettier": "*" } }, "sha512-blv1Qgnn9JExJ9TxC+wfmK0S0pjQmj8qFVnOZTbD8ckJwerf/3QTreKRB8PFvjpfLSLut7AekcrONVfkg/QeAw=="],
+    "@alex-grover/prettier-config": ["@alex-grover/prettier-config@0.0.6", "", { "peerDependencies": { "prettier": "*" } }, "sha512-Uoh4ZZaM1ZFWYsxF20gJA1u3ffbebEWV54yaYSIFPIZXPyvxqrP9PxQIQeYREfLRbDaXGs1TgnMzvn8IvOJidA=="],
 
     "@alex-grover/stylelint-config": ["@alex-grover/stylelint-config@0.0.6", "", { "peerDependencies": { "stylelint": "*", "stylelint-config-css-modules": "*", "stylelint-config-recess-order": "*", "stylelint-config-standard": "*", "stylelint-gamut": "*", "stylelint-plugin-use-baseline": "*" } }, "sha512-AwbinTWf+Fy/g8ZQX2DklT7CTkrwZSc7BbvIxEzPYxkc3pRLlEyg7n+UidKaablrTNVb8nY6I9N6Cw9MkG0rzQ=="],
 
