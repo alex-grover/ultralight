@@ -9,14 +9,16 @@
         "react-dom": "19.1.0",
       },
       "devDependencies": {
-        "@alex-grover/eslint-config": "^0.0.8",
-        "@alex-grover/lefthook-config": "^0.0.3",
-        "@alex-grover/prettier-config": "^0.0.3",
-        "@alex-grover/stylelint-config": "^0.0.5",
-        "@eslint/eslintrc": "^3",
-        "@types/node": "^20",
-        "@types/react": "^19",
-        "@types/react-dom": "^19",
+        "@alex-grover/eslint-config": "^0.0.10",
+        "@alex-grover/lefthook-config": "^0.0.4",
+        "@alex-grover/prettier-config": "^0.0.5",
+        "@alex-grover/stylelint-config": "^0.0.6",
+        "@eslint/eslintrc": "^3.3.1",
+        "@tsconfig/next": "^2.0.3",
+        "@tsconfig/strictest": "^2.0.6",
+        "@types/node": "^20.19.21",
+        "@types/react": "^19.2.2",
+        "@types/react-dom": "^19.2.2",
         "@typescript-eslint/eslint-plugin": "^8.46.1",
         "@typescript-eslint/parser": "^8.46.1",
         "eslint": "^9.37.0",
@@ -33,18 +35,18 @@
         "stylelint-config-standard": "^39.0.1",
         "stylelint-gamut": "^1.3.4",
         "stylelint-plugin-use-baseline": "^1.0.2",
-        "typescript": "^5",
+        "typescript": "^5.9.3",
       },
     },
   },
   "packages": {
-    "@alex-grover/eslint-config": ["@alex-grover/eslint-config@0.0.8", "", { "peerDependencies": { "@eslint/js": "*", "eslint": ">=9.0.0", "eslint-config-prettier": "*", "eslint-plugin-import": "*", "typescript-eslint": "*" } }, "sha512-iPveZFtwiYa5m7TfbY+VTnL7nHZCun7Rp0DtaTPcReU6O14weMkRLhQy9dNgHT2tY902im8e6iA+4STsNOqerg=="],
+    "@alex-grover/eslint-config": ["@alex-grover/eslint-config@0.0.10", "", { "peerDependencies": { "@eslint/js": "*", "eslint": ">=9.0.0", "eslint-config-prettier": "*", "eslint-plugin-import": "*", "typescript-eslint": "*" } }, "sha512-wWw5Iqi/G5ZPtc+P6ZjP/5x3BCDep+cRoBafXQIA9DMRGWmlSxLl5PmEf2AcEonuVYjvnt3p2x2oBIswub3xtA=="],
 
-    "@alex-grover/lefthook-config": ["@alex-grover/lefthook-config@0.0.3", "", { "peerDependencies": { "lefthook": "*" } }, "sha512-Ckcu02nIu7pbxcdD8HkV+l8OBL4QFO3Y6SHn4sYcPcpUcDmbIKdciS1IBaJ/LYkFnPUuIRg4IWQoHdjBVmRWoA=="],
+    "@alex-grover/lefthook-config": ["@alex-grover/lefthook-config@0.0.4", "", { "peerDependencies": { "lefthook": "*" } }, "sha512-5/sn3k+znMJ+aippIpN2Kl6up/68qW7s8c65e4Ev9u/0fHBnaH5Sq2VLlATceoMXNpzU5wjCszrtvQJa+VyzJg=="],
 
-    "@alex-grover/prettier-config": ["@alex-grover/prettier-config@0.0.3", "", { "peerDependencies": { "prettier": "*" } }, "sha512-3nbfRksaO66H9+S6mNP/Gx5ZaBnHDC0+nhY6rXeaDhgyekN7U+cugLZnHrYW9TL5gK2PLIMhdVNtgBfyva3V3A=="],
+    "@alex-grover/prettier-config": ["@alex-grover/prettier-config@0.0.5", "", { "peerDependencies": { "prettier": "*" } }, "sha512-blv1Qgnn9JExJ9TxC+wfmK0S0pjQmj8qFVnOZTbD8ckJwerf/3QTreKRB8PFvjpfLSLut7AekcrONVfkg/QeAw=="],
 
-    "@alex-grover/stylelint-config": ["@alex-grover/stylelint-config@0.0.5", "", { "peerDependencies": { "stylelint": "*", "stylelint-config-css-modules": "*", "stylelint-config-recess-order": "*", "stylelint-config-standard": "*", "stylelint-gamut": "*", "stylelint-plugin-use-baseline": "*" } }, "sha512-BYNwSg1v0U5K56t+9PPNFhPuliA9DxsrIaOGlsisKAfWdF5XZ9nZUuRSlq+NcJ54JFKuE7dQ5vwhw5BRacI4oQ=="],
+    "@alex-grover/stylelint-config": ["@alex-grover/stylelint-config@0.0.6", "", { "peerDependencies": { "stylelint": "*", "stylelint-config-css-modules": "*", "stylelint-config-recess-order": "*", "stylelint-config-standard": "*", "stylelint-gamut": "*", "stylelint-plugin-use-baseline": "*" } }, "sha512-AwbinTWf+Fy/g8ZQX2DklT7CTkrwZSc7BbvIxEzPYxkc3pRLlEyg7n+UidKaablrTNVb8nY6I9N6Cw9MkG0rzQ=="],
 
     "@babel/code-frame": ["@babel/code-frame@7.27.1", "", { "dependencies": { "@babel/helper-validator-identifier": "^7.27.1", "js-tokens": "^4.0.0", "picocolors": "^1.1.1" } }, "sha512-cjQ7ZlQ0Mv3b47hABuTevyTuYN4i+loJKGeV9flcCgIK37cCXRh+L1bd3iBHlynerhQ7BhCkn2BPbQUL+rGqFg=="],
 
@@ -183,6 +185,10 @@
     "@rushstack/eslint-patch": ["@rushstack/eslint-patch@1.14.0", "", {}, "sha512-WJFej426qe4RWOm9MMtP4V3CV4AucXolQty+GRgAWLgQXmpCuwzs7hEpxxhSc/znXUSxum9d/P/32MW0FlAAlA=="],
 
     "@swc/helpers": ["@swc/helpers@0.5.15", "", { "dependencies": { "tslib": "^2.8.0" } }, "sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g=="],
+
+    "@tsconfig/next": ["@tsconfig/next@2.0.3", "", {}, "sha512-b4aKvmdWnv9aUy+NStUFlefirk3SItW20OJtbi5/ue9oMRaQtUYbN5zsr7OmV3rlx6Gp6h7A82gPoCXhrNGVPQ=="],
+
+    "@tsconfig/strictest": ["@tsconfig/strictest@2.0.6", "", {}, "sha512-tPOhmDhIUcDjvpDDYyiUdssP84Eqm7n5KxJe5J3/g+s6xoDIPAf+SIn06dhw7VkhxIvLOnhDDrX7tsqMHNEhDg=="],
 
     "@tybys/wasm-util": ["@tybys/wasm-util@0.10.1", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg=="],
 

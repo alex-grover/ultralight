@@ -7,12 +7,14 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "check:format": "prettier . --check --cache",
-    "fix:format": "prettier . --write --cache",
-    "check:lint": "eslint --cache --cache-location node_modules/.cache",
-    "fix:lint": "eslint --fix --cache --cache-location node_modules/.cache",
-    "check:styles": "stylelint ./**/*.css --cache --cache-location node_modules/.cache",
-    "fix:styles": "stylelint ./**/*.css --fix --cache --cache-location node_modules/.cache"
+    "check:format": "bun run format --check .",
+    "fix:format": "bun run format --write .",
+    "lint": "eslint --cache --cache-location node_modules/.cache",
+    "check:lint": "bun run lint .",
+    "fix:lint": "bun run check:lint --fix",
+    "styles": "stylelint --cache --cache-location node_modules/.cache",
+    "check:styles": "bun run styles ./**/*.css",
+    "fix:styles": "bun run check:styles --fix"
   },
   "dependencies": {
     "react": "19.1.0",
@@ -20,14 +22,16 @@
     "next": "15.5.5"
   },
   "devDependencies": {
-    "@alex-grover/eslint-config": "^0.0.8",
-    "@alex-grover/lefthook-config": "^0.0.3",
-    "@alex-grover/prettier-config": "^0.0.3",
-    "@alex-grover/stylelint-config": "^0.0.5",
-    "@eslint/eslintrc": "^3",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@alex-grover/eslint-config": "^0.0.10",
+    "@alex-grover/lefthook-config": "^0.0.4",
+    "@alex-grover/prettier-config": "^0.0.5",
+    "@alex-grover/stylelint-config": "^0.0.6",
+    "@eslint/eslintrc": "^3.3.1",
+    "@tsconfig/next": "^2.0.3",
+    "@tsconfig/strictest": "^2.0.6",
+    "@types/node": "^20.19.21",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
     "@typescript-eslint/eslint-plugin": "^8.46.1",
     "@typescript-eslint/parser": "^8.46.1",
     "eslint": "^9.37.0",
@@ -44,7 +48,7 @@
     "stylelint-config-standard": "^39.0.1",
     "stylelint-gamut": "^1.3.4",
     "stylelint-plugin-use-baseline": "^1.0.2",
-    "typescript": "^5"
+    "typescript": "^5.9.3"
   },
   "prettier": "@alex-grover/prettier-config",
   "stylelint": {
