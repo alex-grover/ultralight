@@ -4,6 +4,7 @@
     "@tsconfig/strictest/tsconfig.json"
   ],
   "compilerOptions": {
+    "target": "ES2017",
     "paths": {
       "@/*": ["./src/*"]
     }
