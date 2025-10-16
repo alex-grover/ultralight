@@ -2,11 +2,13 @@
   "name": "ultralight",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "bun@1.2.3",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "check:lint": "eslint",
+    "fix:lint": "eslint --fix"
   },
   "dependencies": {
     "react": "19.1.0",
