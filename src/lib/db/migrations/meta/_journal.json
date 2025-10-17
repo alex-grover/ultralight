@@ -8,6 +8,13 @@
       "when": 1760657651964,
       "tag": "0000_confused_jack_power",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1760660043247,
+      "tag": "0001_easy_stepford_cuckoos",
+      "breakpoints": true
     }
   ]
 }

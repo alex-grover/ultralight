@@ -16,6 +16,8 @@ export const users = pgTable('users', {
   email: text().notNull().unique(),
   emailVerified: boolean().default(false).notNull(),
   image: text(),
+  username: text('username').unique(),
+  displayUsername: text('display_username'),
 })
 
 export const sessions = pgTable('sessions', {
