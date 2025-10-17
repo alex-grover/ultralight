@@ -15,6 +15,13 @@
       "when": 1760660043247,
       "tag": "0001_easy_stepford_cuckoos",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1760660598134,
+      "tag": "0002_mute_norrin_radd",
+      "breakpoints": true
     }
   ]
 }

@@ -1,6 +1,6 @@
 import { betterAuth } from 'better-auth'
 import { drizzleAdapter } from 'better-auth/adapters/drizzle'
-import { username } from 'better-auth/plugins'
+import { anonymous, username } from 'better-auth/plugins'
 import { db } from '@/lib/db'
 
 export const auth = betterAuth({
@@ -11,5 +11,5 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
   },
-  plugins: [username()],
+  plugins: [username(), anonymous()],
 })
