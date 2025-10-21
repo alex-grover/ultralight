@@ -11,7 +11,7 @@
     "check:format": "bun run format --check .",
     "fix:format": "bun run format --write .",
     "lint": "eslint --cache --cache-location node_modules/.cache",
-    "check:lint": "bun run lint .",
+    "check:lint": "bun run --bun lint .",
     "fix:lint": "bun run check:lint --fix",
     "styles": "stylelint --cache --cache-location node_modules/.cache",
     "check:styles": "bun run styles ./**/*.css",
@@ -61,7 +61,8 @@
     "stylelint-config-standard": "^39.0.1",
     "stylelint-gamut": "^1.3.4",
     "stylelint-plugin-use-baseline": "^1.0.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vercel": "^48.4.1"
   },
   "prettier": "@alex-grover/prettier-config",
   "stylelint": {
