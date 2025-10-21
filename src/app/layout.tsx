@@ -4,7 +4,7 @@ import styles from './layout.module.css'
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en">
+    <html lang="en" className={styles['html']}>
       <body className={styles['body']}>{children}</body>
     </html>
   )
