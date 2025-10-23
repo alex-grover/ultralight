@@ -1,11 +1,12 @@
 import { betterAuth } from 'better-auth'
 import { drizzleAdapter } from 'better-auth/adapters/drizzle'
+import { nextCookies } from 'better-auth/next-js'
 import { anonymous, username } from 'better-auth/plugins'
 import { db } from '@/lib/db'
 import { env } from '@/lib/env'
 
 export const auth = betterAuth({
-  baseURL: `https://${env.VERCEL_URL}`,
+  baseURL: env.VERCEL_URL,
   database: drizzleAdapter(db, {
     provider: 'pg',
     usePlural: true,
@@ -13,5 +14,5 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
   },
-  plugins: [anonymous(), username()],
+  plugins: [anonymous(), nextCookies(), username()],
 })

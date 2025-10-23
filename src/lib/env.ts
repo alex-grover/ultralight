@@ -8,7 +8,9 @@ export const env = createEnv({
     DATABASE_URL_UNPOOLED: z.url(),
     VERCEL_URL: z
       .string()
-      .transform((url) => `https://${url}`)
+      .transform((url) =>
+        url.startsWith('localhost:') ? `http://${url}` : `https://${url}`,
+      )
       .pipe(z.url()),
   },
   experimental__runtimeEnv: process.env,
