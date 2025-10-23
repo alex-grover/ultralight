@@ -1,12 +1,38 @@
 'use client'
 
-import useSWR from 'swr'
-import type { GetListsError, GetListsResponse } from '@/app/api/lists/route'
+import { useCallback } from 'react'
+import type { GetListsResponse } from '@/app/api/lists/route'
+import { useLists } from '@/lib/api/hooks/lists'
 
-export function Lists() {
-  const { data } = useSWR<GetListsResponse, GetListsError>('/api/lists')
+type ListsProps = {
+  initialLists: GetListsResponse
+}
 
-  if (!data) return <div>Loading...</div>
+export function Lists({ initialLists }: ListsProps) {
+  const { addList } = useLists(initialLists)
+
+  const handleClick = useCallback(() => {
+    addList({
+      name: 'test',
+      description: 'test description',
+      public: false,
+    })
+  }, [addList])
+
+  return (
+    <div>
+      <ListsTable initialLists={initialLists} />
+      <button onClick={handleClick}>Create</button>
+    </div>
+  )
+}
+
+function ListsTable({ initialLists }: ListsProps) {
+  const { data, isLoading, error } = useLists(initialLists)
+
+  if (isLoading && !data) return <div>Loading...</div>
+
+  if (error || !data) return <div>{error?.message}</div>
 
   if (!data.length) return <div>No lists yet</div>
 
