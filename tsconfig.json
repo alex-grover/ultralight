@@ -5,7 +5,7 @@
   ],
   "compilerOptions": {
     "target": "ES2017",
-    "exactOptionalPropertyTypes": false,
+    "exactOptionalPropertyTypes": false, // better-auth is not compatible with this
     "paths": {
       "@/*": ["./src/*"]
     }
