@@ -17,8 +17,8 @@
     "check:styles": "bun run styles ./**/*.css",
     "fix:styles": "bun run check:styles --fix",
     "check:types": "tsc",
-    "db:generate": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit migrate"
+    "db:generate": "bun run --bun drizzle-kit generate",
+    "db:migrate": "bun run --bun drizzle-kit migrate"
   },
   "dependencies": {
     "@alex-grover/styles": "^0.0.2",
