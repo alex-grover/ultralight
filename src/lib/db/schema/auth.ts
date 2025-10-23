@@ -1,13 +1,5 @@
 import { pgTable, text, timestamp, boolean } from 'drizzle-orm/pg-core'
-
-const timestamps = {
-  createdAt: timestamp().defaultNow().notNull(),
-  updatedAt: timestamp()
-    .defaultNow()
-    .$onUpdate(() => new Date())
-    .notNull(),
-  deletedAt: timestamp(),
-}
+import { timestamps } from './timestamps'
 
 export const users = pgTable('users', {
   id: text().primaryKey(),
