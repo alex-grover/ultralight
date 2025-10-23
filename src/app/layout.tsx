@@ -1,7 +1,7 @@
 import '@alex-grover/styles/reset.css'
 import type { PropsWithChildren } from 'react'
 import { SWRConfig } from 'swr'
-import { fetcher } from '@/lib/api'
+import { fetcher } from '@/lib/api/fetcher'
 import styles from './layout.module.css'
 
 export default function RootLayout({ children }: PropsWithChildren) {
