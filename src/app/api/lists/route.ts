@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server'
 import { getListsForUser } from '@/domain/lists'
 import { auth } from '@/lib/auth/server'
 import type schema from '@/lib/db/schema'
+import type { UserId } from '@/lib/db/schema'
 
 export type GetListsResponse = InferSelectModel<typeof schema.lists>[]
 
@@ -14,7 +15,7 @@ export async function GET(request: Request) {
   if (!session)
     return NextResponse.json<GetListsError>('Unauthorized', { status: 401 })
 
-  const lists = await getListsForUser(session.user.id)
+  const lists = await getListsForUser(session.user.id as UserId)
 
   return NextResponse.json<GetListsResponse>(lists)
 }
