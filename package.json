@@ -4,9 +4,9 @@
   "private": true,
   "packageManager": "bun@1.2.3",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
-    "start": "next start",
+    "dev": "bun --bun run next dev --turbopack",
+    "build": "bun --bun run next build --turbopack",
+    "start": "bun --bun run next start",
     "format": "prettier --cache --ignore-unknown",
     "check:format": "bun run format --check .",
     "fix:format": "bun run format --write .",
