@@ -13,7 +13,7 @@ export function useLists(initialLists: GetListsResponse) {
   const { data, isLoading, isValidating, error, mutate } = useSWR<
     GetListsResponse,
     Error
-  >(LISTS_API_URL, { fallbackData: initialLists })
+  >(LISTS_API_URL, { fallbackData: initialLists, revalidateOnMount: false })
 
   const addList = useCallback(
     (input: CreateListInput) => {
@@ -34,7 +34,8 @@ export function useLists(initialLists: GetListsResponse) {
 
               const created = (await res.json()) as CreateListResponse
 
-              return data ? [created, ...data] : [created]
+              const existingData = data ?? initialLists
+              return [created, ...existingData]
             },
             {
               optimisticData: (data) => {
@@ -52,6 +53,7 @@ export function useLists(initialLists: GetListsResponse) {
 
                 return [optimisticList, ...existingData]
               },
+              revalidate: false,
             },
           )
         } catch {
