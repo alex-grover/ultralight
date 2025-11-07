@@ -5,15 +5,17 @@ import type {
   CreateListResponse,
   GetListsResponse,
 } from '@/app/api/lists/route'
+import { authClient } from '@/lib/auth/client'
 import type { ListId, UserId } from '@/lib/db/schema'
 
 const LISTS_API_URL = '/api/lists'
 
-export function useLists(initialLists: GetListsResponse) {
+export function useLists() {
+  const { data: session } = authClient.useSession()
   const { data, isLoading, isValidating, error, mutate } = useSWR<
     GetListsResponse,
     Error
-  >(LISTS_API_URL, { fallbackData: initialLists, revalidateOnMount: false })
+  >(session && LISTS_API_URL)
 
   const addList = useCallback(
     (input: CreateListInput) => {
@@ -34,13 +36,10 @@ export function useLists(initialLists: GetListsResponse) {
 
               const created = (await res.json()) as CreateListResponse
 
-              const existingData = data ?? initialLists
-              return [created, ...existingData]
+              return data ? [created, ...data] : [created]
             },
             {
               optimisticData: (data) => {
-                const existingData = data ?? initialLists
-
                 const optimisticList = {
                   ...input,
                   id: 0 as ListId,
@@ -51,7 +50,7 @@ export function useLists(initialLists: GetListsResponse) {
                   deletedAt: null,
                 }
 
-                return [optimisticList, ...existingData]
+                return data ? [optimisticList, ...data] : [optimisticList]
               },
               revalidate: false,
             },
@@ -63,7 +62,7 @@ export function useLists(initialLists: GetListsResponse) {
 
       void execute()
     },
-    [mutate, initialLists],
+    [mutate],
   )
 
   return { data, isLoading, isValidating, error, mutate, addList }
