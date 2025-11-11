@@ -24,17 +24,20 @@
   "dependencies": {
     "@alex-grover/result": "^0.0.2",
     "@alex-grover/styles": "^0.0.2",
+    "@radix-ui/react-icons": "^1.3.2",
     "@sindresorhus/slugify": "^3.0.0",
     "@t3-oss/env-nextjs": "^0.13.8",
     "better-auth": "^1.3.27",
     "clsx": "^2.1.1",
     "drizzle-orm": "^0.44.6",
     "drizzle-zod": "^0.8.3",
+    "es-cookie": "^1.5.0",
     "next": "15.5.5",
     "postgres": "^3.4.7",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "swr": "^2.3.6",
+    "usehooks-ts": "^3.1.1",
     "zod": "^4.1.12"
   },
   "devDependencies": {

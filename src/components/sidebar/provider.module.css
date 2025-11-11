@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-grow: 1;
+
+  --sidebar-width: 256px;
+  --sidebar-translate: calc(-1 * var(--sidebar-width));
+
+  &:has(:global(#sidebar-trigger):checked:not([data-set='false'])) {
+    --sidebar-translate: 0;
+    --sidebar-shadow:
+      4px 0 6px -4px var(--shadow-sage-1), 8px 0 12px -8px var(--shadow-sage-2);
+  }
+}
+
+.input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+@media (--tablet-portrait-up) {
+  .container:has(:global(#sidebar-trigger):checked) {
+    --sidebar-translate: 0;
+    --sidebar-shadow: none;
+  }
+}

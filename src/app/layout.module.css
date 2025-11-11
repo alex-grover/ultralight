@@ -1,8 +1,159 @@
 .html {
-  --background: light-dark(oklch(100% 0 0deg), oklch(14.48% 0 0deg));
-  --foreground: light-dark(oklch(20.46% 0 0deg), oklch(94.61% 0 0deg));
-  --accent: light-dark(oklch(98% 0 0deg), oklch(37.1% 0 0deg));
-  --container-width: 900px;
+  /* =========================
+     Colors
+     ========================= */
+
+  /* Sage */
+  --color-sage-1: light-dark(
+    oklch(99.23% 0.0025 165.08deg),
+    oklch(17.95% 0.0038 164.58deg)
+  );
+  --color-sage-2: light-dark(
+    oklch(98.03% 0.0025 165.08deg),
+    oklch(21.08% 0.0036 164.68deg)
+  );
+  --color-sage-3: light-dark(
+    oklch(95.56% 0.0035 174.48deg),
+    oklch(24.95% 0.0035 164.77deg)
+  );
+  --color-sage-4: light-dark(
+    oklch(93.14% 0.0035 174.48deg),
+    oklch(28.16% 0.0047 174.1deg)
+  );
+  --color-sage-5: light-dark(
+    oklch(90.99% 0.0042 157.17deg),
+    oklch(30.98% 0.0046 174.15deg)
+  );
+  --color-sage-6: light-dark(
+    oklch(88.58% 0.0035 174.47deg),
+    oklch(34.78% 0.0064 164.65deg)
+  );
+  --color-sage-7: light-dark(
+    oklch(85.08% 0.0052 164.98deg),
+    oklch(40.01% 0.0073 170.09deg)
+  );
+  --color-sage-8: light-dark(
+    oklch(79.15% 0.0052 164.97deg),
+    oklch(48.9% 0.0099 168.42deg)
+  );
+  --color-sage-9: light-dark(
+    oklch(63.92% 0.0103 171.61deg),
+    oklch(53.27% 0.0175 170.54deg)
+  );
+  --color-sage-10: light-dark(
+    oklch(60.57% 0.0105 171.57deg),
+    oklch(57.85% 0.0155 173.79deg)
+  );
+  --color-sage-11: light-dark(
+    oklch(50.08% 0.0081 174.11deg),
+    oklch(76.59% 0.0099 171.7deg)
+  );
+  --color-sage-12: light-dark(
+    oklch(23.96% 0.0117 167.56deg),
+    oklch(94.73% 0.0025 165.07deg)
+  );
+
+  /* Green */
+  --color-green-1: light-dark(
+    oklch(99.42% 0.0041 157.18deg),
+    oklch(18.73% 0.0123 167.01deg)
+  );
+  --color-green-2: light-dark(
+    oklch(98.14% 0.0099 155.1deg),
+    oklch(21.17% 0.0154 165.91deg)
+  );
+  --color-green-3: light-dark(
+    oklch(95.82% 0.0223 155.92deg),
+    oklch(27.21% 0.0396 162.17deg)
+  );
+  --color-green-4: light-dark(
+    oklch(93.35% 0.0372 156.43deg),
+    oklch(31.73% 0.0569 161.84deg)
+  );
+  --color-green-5: light-dark(
+    oklch(89.88% 0.0489 157.25deg),
+    oklch(36.49% 0.066 161.23deg)
+  );
+  --color-green-6: light-dark(
+    oklch(85.58% 0.0641 158.2deg),
+    oklch(41.24% 0.0721 160.95deg)
+  );
+  --color-green-7: light-dark(
+    oklch(79.82% 0.0832 159.15deg),
+    oklch(46.7% 0.0823 160.24deg)
+  );
+  --color-green-8: light-dark(
+    oklch(71.56% 0.1133 160.28deg),
+    oklch(52.8% 0.0963 159.39deg)
+  );
+  --color-green-9: light-dark(
+    oklch(64.06% 0.1329 157.68deg),
+    oklch(64.06% 0.1329 157.68deg)
+  );
+  --color-green-10: light-dark(
+    oklch(61.15% 0.1266 158.23deg),
+    oklch(67.46% 0.1406 157.7deg)
+  );
+  --color-green-11: light-dark(
+    oklch(54.35% 0.1116 159.5deg),
+    oklch(77.94% 0.1655 157.29deg)
+  );
+  --color-green-12: light-dark(
+    oklch(32.2% 0.0475 164.53deg),
+    oklch(90.48% 0.083 158.18deg)
+  );
+
+  /* =========================
+     Semantic aliases
+     ========================= */
+
+  /* Backgrounds */
+  --color-bg: light-dark(oklch(100%, 0, 0deg), var(--color-sage-1));
+  --color-bg-subtle: var(--color-sage-2);
+  --color-bg-surface: var(--color-sage-3);
+  --color-bg-surface-hover: var(--color-sage-4);
+  --color-bg-surface-active: var(--color-sage-5);
+  --color-bg-surface-accent: var(--color-green-3);
+  --color-bg-surface-hover-accent: var(--color-green-4);
+  --color-bg-surface-active-accent: var(--color-green-5);
+  --color-bg-solid: var(--color-sage-9);
+  --color-bg-solid-hover: var(--color-sage-10);
+  --color-bg-solid-accent: var(--color-green-9);
+  --color-bg-solid-hover-accent: var(--color-green-10);
+
+  /* Borders */
+  --color-border: var(--color-sage-7);
+  --color-border-subtle: var(--color-sage-6);
+  --color-border-hover: var(--color-sage-8);
+  --color-border-accent: var(--color-green-7);
+  --color-border-subtle-accent: var(--color-green-6);
+  --color-border-hover-accent: var(--color-green-8);
+
+  /* Text */
+  --color-text: var(--color-sage-12);
+  --color-text-subtle: var(--color-sage-11);
+  --color-text-accent: var(--color-green-12);
+  --color-text-subtle-accent: var(--color-green-11);
+
+  /* Sizes */
+  --size-sm: 8px;
+  --size-md: 16px;
+
+  /* Shadows */
+  --shadow-sage-1: light-dark(
+    color-mix(in oklch, var(--color-sage-9) 10%, transparent),
+    color-mix(in oklch, var(--color-sage-1) 60%, transparent)
+  );
+  --shadow-sage-2: light-dark(
+    color-mix(in oklch, var(--color-sage-10) 15%, transparent),
+    color-mix(in oklch, var(--color-sage-2) 70%, transparent)
+  );
+  --shadow-sage-3: light-dark(
+    color-mix(in oklch, var(--color-sage-11) 25%, transparent),
+    color-mix(in oklch, var(--color-sage-3) 80%, transparent)
+  );
+  --shadow-sm:
+    0 1px 3px 0 var(--shadow-sage-1), 0 1px 2px -1px var(--shadow-sage-2);
 
   font-family: system-ui;
   color-scheme: light dark;
@@ -12,6 +163,6 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--color-text);
+  background: var(--color-bg-surface);
 }

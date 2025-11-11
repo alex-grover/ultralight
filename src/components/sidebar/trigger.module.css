@@ -1,0 +1,15 @@
+.label {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  align-self: start;
+  justify-content: center;
+  width: 32px;
+  aspect-ratio: 1;
+  cursor: pointer;
+  border-radius: var(--size-sm);
+
+  &:hover {
+    background: var(--color-bg-subtle);
+  }
+}

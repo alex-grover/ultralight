@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-grow: 1;
+}
+
+.content {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  padding: var(--size-md);
+  background: light-dark(oklch(100% 0 0deg), var(--color-bg));
+}
+
+@media (--tablet-portrait-up) {
+  .container {
+    padding: var(--size-sm);
+  }
+
+  .content {
+    border-radius: var(--size-md);
+    box-shadow: var(--shadow-sm);
+  }
+}
