@@ -1,0 +1,7 @@
+html:has(.color-scheme-picker input[value='light']:checked) {
+  color-scheme: light;
+}
+
+html:has(.color-scheme-picker input[value='dark']:checked) {
+  color-scheme: dark;
+}

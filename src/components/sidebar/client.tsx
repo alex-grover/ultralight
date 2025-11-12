@@ -4,8 +4,8 @@ import { set as setCookie } from 'es-cookie'
 import type { PropsWithChildren } from 'react'
 import { useCallback, useState } from 'react'
 import { useEventListener } from 'usehooks-ts'
+import styles from './client.module.css'
 import { cookieOptions, SIDEBAR_COOKIE } from './constants'
-import styles from './provider.module.css'
 
 type SidebarProviderProps = PropsWithChildren<{
   defaultOpen: boolean | null

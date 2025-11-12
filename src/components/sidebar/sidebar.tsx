@@ -1,5 +1,6 @@
 import { Cross2Icon, ValueNoneIcon } from '@radix-ui/react-icons'
 import Link from 'next/link'
+import { ColorSchemePicker } from '@/components/color-scheme'
 import styles from './sidebar.module.css'
 import { SidebarTrigger } from './trigger'
 
@@ -34,7 +35,10 @@ export function Sidebar() {
           ))}
         </ul>
       </div>
-      <div>TODO: footer (profile, sign out, theme toggle, settings)</div>
+      <div>
+        TODO: footer (profile, sign out, theme toggle, settings)
+        <ColorSchemePicker />
+      </div>
     </aside>
   )
 }
