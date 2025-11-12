@@ -108,7 +108,10 @@
      ========================= */
 
   /* Backgrounds */
-  --color-bg: light-dark(oklch(100%, 0, 0deg), var(--color-sage-1));
+  --color-bg: light-dark(
+    color-mix(in oklch, white 100%, transparent 0%),
+    var(--color-sage-1)
+  );
   --color-bg-subtle: var(--color-sage-2);
   --color-bg-surface: var(--color-sage-3);
   --color-bg-surface-hover: var(--color-sage-4);

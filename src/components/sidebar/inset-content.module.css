@@ -8,7 +8,7 @@
   flex-grow: 1;
   flex-direction: column;
   padding: var(--size-md);
-  background: light-dark(oklch(100% 0 0deg), var(--color-bg));
+  background: var(--color-bg);
 }
 
 @media (--tablet-portrait-up) {
