@@ -13,7 +13,6 @@ import styles from './layout.module.css'
 
 const geist = Geist({
   subsets: ['latin'],
-  variable: '--font-sans',
 })
 
 export default function RootLayout({ children }: PropsWithChildren) {
