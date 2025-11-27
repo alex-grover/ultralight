@@ -23,8 +23,12 @@
 }
 
 @media (--tablet-portrait-up) {
-  .container:has(:global(#sidebar-trigger):checked) {
-    --sidebar-translate: 0;
-    --sidebar-shadow: none;
+  .container {
+    --sidebar-width: 288px;
+
+    &:has(:global(#sidebar-trigger):checked) {
+      --sidebar-translate: 0;
+      --sidebar-shadow: none;
+    }
   }
 }

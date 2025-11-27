@@ -18,13 +18,11 @@ export function SidebarProviderClient({
   const [open, setOpen] = useState(defaultOpen)
 
   const toggleSidebar = useCallback(() => {
-    // --tablet-portrait-up
-    const isMobile = window.innerWidth < 600
-    const next = open === null ? isMobile : !open
+    const next = open === null ? isMobile() : !open
 
     setOpen(next)
 
-    if (!isMobile)
+    if (!isMobile() || !next)
       setCookie(SIDEBAR_COOKIE, next ? 'open' : 'closed', cookieOptions)
   }, [open])
 
@@ -32,6 +30,18 @@ export function SidebarProviderClient({
     if (event.key !== 'b' || !(event.metaKey || event.ctrlKey)) return
     event.preventDefault()
     toggleSidebar()
+  })
+
+  useEventListener('resize', () => {
+    if (isMobile() && open) {
+      setOpen(false)
+      setCookie(SIDEBAR_COOKIE, 'closed', cookieOptions)
+    }
+
+    if (!isMobile() && !open) {
+      setOpen(true)
+      setCookie(SIDEBAR_COOKIE, 'open', cookieOptions)
+    }
   })
 
   return (
@@ -47,4 +57,9 @@ export function SidebarProviderClient({
       {children}
     </div>
   )
+}
+
+function isMobile() {
+  // --tablet-portrait-up
+  return window.innerWidth < 600
 }
