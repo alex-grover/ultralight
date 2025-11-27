@@ -1,4 +1,4 @@
-import { Cross2Icon, ValueNoneIcon } from '@radix-ui/react-icons'
+import { Cross2Icon, PlusIcon, ValueNoneIcon } from '@radix-ui/react-icons'
 import Link from 'next/link'
 import { ColorSchemePicker } from '@/components/color-scheme'
 import styles from './sidebar.module.css'
@@ -17,7 +17,12 @@ export function Sidebar() {
         </SidebarTrigger>
       </div>
       <div className={styles['content']}>
-        <div className={styles['label']}>Lists</div>
+        <div className={styles['section']}>
+          <div className={styles['label']}>Lists</div>
+          <button className={styles['button']}>
+            <PlusIcon />
+          </button>
+        </div>
         <ul className={styles['lists']}>
           {[
             { id: 1, name: 'Test List' },

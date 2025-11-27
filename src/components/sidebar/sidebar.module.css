@@ -39,11 +39,21 @@
   overflow-y: auto;
 }
 
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .label {
   padding-left: var(--size-sm);
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--color-text-subtle);
+}
+
+.button {
+  cursor: pointer;
 }
 
 .lists {
