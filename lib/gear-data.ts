@@ -132,11 +132,8 @@ export function computeSummary(cats: Category[]) {
       } else if (item.classification === "consumable") {
         consumables += itemTotalWeight
       } else if (item.classification === "worn") {
-        // For worn items with quantity > 1, only 1 counts as worn, rest as base
-        worn += item.weight
-        if (item.quantity > 1) {
-          baseWeight += item.weight * (item.quantity - 1)
-        }
+        // All worn items count as worn weight (matching lighterpack behavior)
+        worn += itemTotalWeight
       }
     }
   }
@@ -165,22 +162,16 @@ export type CategoryBreakdown = {
 }
 
 // Compute weight breakdown per category by classification
-// For worn items with quantity > 1, only 1 counts as worn, rest as base
+// All items count their full quantity toward their classification
 export function computeCategoryBreakdown(cats: Category[]): CategoryBreakdown[] {
   return cats.map((cat) => {
-    let base = cat.items
+    const base = cat.items
       .filter((i) => i.classification === "base")
       .reduce((sum, i) => sum + i.weight * i.quantity, 0)
     
-    // Add extra worn items (quantity - 1) to base
-    base += cat.items
-      .filter((i) => i.classification === "worn" && i.quantity > 1)
-      .reduce((sum, i) => sum + i.weight * (i.quantity - 1), 0)
-    
-    // Only 1 of each worn item counts as worn
     const worn = cat.items
       .filter((i) => i.classification === "worn")
-      .reduce((sum, i) => sum + i.weight, 0)
+      .reduce((sum, i) => sum + i.weight * i.quantity, 0)
     
     const consumable = cat.items
       .filter((i) => i.classification === "consumable")
