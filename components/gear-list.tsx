@@ -1,6 +1,6 @@
 "use client"
 
-import { Package, Shirt, Droplet } from "lucide-react"
+import { Shirt, Droplet } from "lucide-react"
 import { categories } from "@/lib/gear-data"
 import { useUnit } from "@/lib/unit-context"
 
@@ -9,8 +9,6 @@ export function GearList() {
   
   const getClassificationIcon = (classification: string) => {
     switch (classification) {
-      case "base":
-        return <Package className="w-3 h-3" strokeWidth={1.5} />
       case "worn":
         return <Shirt className="w-3 h-3" strokeWidth={1.5} />
       case "consumable":
@@ -66,10 +64,13 @@ export function GearList() {
                     {item.name}
                   </span>
                   
-                  {/* Classification Icon */}
-                  <div className={`w-4 h-4 shrink-0 flex items-center justify-center ${getClassificationColor(item.classification)}`}>
-                    {getClassificationIcon(item.classification)}
-                  </div>
+                  {/* Classification Icon - only show for worn/consumable */}
+                  {item.classification !== "base" && (
+                    <div className={`w-4 h-4 shrink-0 flex items-center justify-center ${getClassificationColor(item.classification)}`}>
+                      {getClassificationIcon(item.classification)}
+                    </div>
+                  )}
+                  {item.classification === "base" && <div className="w-4 shrink-0" />}
                   
                   {/* Quantity */}
                   <span className="text-xs font-mono text-muted-foreground w-6 text-center shrink-0">
