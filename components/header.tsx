@@ -10,8 +10,8 @@ export function Header() {
           {/* Main title block */}
           <div>
             <h1 className="text-3xl md:text-4xl font-light tracking-tight text-foreground">
-              PACK
-              <span className="font-semibold">WEIGHT</span>
+              ULTRA
+              <span className="font-semibold">LIGHT</span>
             </h1>
             <div className="h-px w-16 bg-foreground mt-1" />
           </div>
