@@ -42,9 +42,9 @@ export function SummaryMicroBars() {
           const consumablePercent = (category.consumable / category.total) * 100
 
           return (
-            <div key={category.name} className="group flex items-center gap-3 relative">
+            <div key={category.name} className="group grid grid-cols-[5rem_1fr_3rem_4rem] gap-3 items-center">
               {/* Category name */}
-              <span className="w-20 shrink-0 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
                 {category.name}
               </span>
 
@@ -92,12 +92,12 @@ export function SummaryMicroBars() {
               </div>
 
               {/* Percentage */}
-              <span className="w-8 text-[10px] font-mono tabular-nums text-muted-foreground text-right">
+              <span className="text-[10px] font-mono tabular-nums text-muted-foreground text-right">
                 {Math.round(totalPercentage)}%
               </span>
 
               {/* Weight */}
-              <span className="w-16 text-xs font-mono tabular-nums text-foreground text-right">
+              <span className="text-xs font-mono tabular-nums text-foreground text-right">
                 {formatWeight(category.total)}
               </span>
             </div>
