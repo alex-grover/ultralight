@@ -34,16 +34,6 @@ export function GearList() {
                     {item.item}
                   </span>
                   
-                  {/* Quantity */}
-                  <span className="text-xs font-mono text-muted-foreground w-6 text-center shrink-0">
-                    {item.quantity}
-                  </span>
-                  
-                  {/* Weight */}
-                  <span className="text-xs font-mono tabular-nums text-foreground w-16 text-right shrink-0">
-                    {formatWeight(item.weight * item.quantity)}
-                  </span>
-                  
                   {/* Name */}
                   <span className="text-sm text-foreground flex-1 min-w-0 truncate">
                     {item.name}
@@ -58,6 +48,16 @@ export function GearList() {
                         : 'text-emerald-600'
                   }`}>
                     {item.classification === 'consumable' ? 'cons' : item.classification}
+                  </span>
+                  
+                  {/* Quantity */}
+                  <span className="text-xs font-mono text-muted-foreground w-6 text-center shrink-0">
+                    {item.quantity}
+                  </span>
+                  
+                  {/* Weight */}
+                  <span className="text-xs font-mono tabular-nums text-foreground w-16 text-right shrink-0">
+                    {formatWeight(item.weight * item.quantity)}
                   </span>
                 </div>
               ))}
