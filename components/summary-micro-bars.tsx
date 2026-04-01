@@ -50,7 +50,7 @@ export function SummaryMicroBars() {
 
               {/* Segmented bar container */}
               <div
-                className="flex-1 h-2 bg-muted/30 relative cursor-pointer transition-opacity hover:opacity-80"
+                className="h-2 bg-muted/30 relative cursor-pointer transition-opacity hover:opacity-80"
                 style={{ width: `${percentage}%` }}
                 onMouseEnter={() => setHoveredCategory(category.name)}
                 onMouseLeave={() => setHoveredCategory(null)}
