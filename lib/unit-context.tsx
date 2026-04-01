@@ -30,17 +30,19 @@ export function UnitProvider({ children }: { children: ReactNode }) {
   }
 
   const formatWeight = (grams: number): string => {
+    const rounded = Math.round(grams)
+    
     if (!mounted) {
-      return `${grams} g`
+      return `${rounded} g`
     }
     
     switch (unit) {
       case "oz":
-        return `${(grams / 28.3495).toFixed(2)} oz`
+        return `${(rounded / 28.3495).toFixed(2)} oz`
       case "lb":
-        return `${(grams / 453.592).toFixed(2)} lb`
+        return `${(rounded / 453.592).toFixed(2)} lb`
       default:
-        return `${grams} g`
+        return `${rounded} g`
     }
   }
 
