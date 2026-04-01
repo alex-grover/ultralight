@@ -14,13 +14,13 @@ export function SummaryMicroBars() {
   const categoryBreakdown = categories.map((cat) => {
     const base = cat.items
       .filter((i) => i.classification === "base")
-      .reduce((sum, i) => sum + i.weight, 0)
+      .reduce((sum, i) => sum + i.weight * i.quantity, 0)
     const worn = cat.items
       .filter((i) => i.classification === "worn")
-      .reduce((sum, i) => sum + i.weight, 0)
+      .reduce((sum, i) => sum + i.weight * i.quantity, 0)
     const consumable = cat.items
       .filter((i) => i.classification === "consumable")
-      .reduce((sum, i) => sum + i.weight, 0)
+      .reduce((sum, i) => sum + i.weight * i.quantity, 0)
     const total = base + worn + consumable
     
     return { name: cat.name, base, worn, consumable, total }
