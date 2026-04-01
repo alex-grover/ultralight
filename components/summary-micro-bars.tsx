@@ -109,26 +109,26 @@ export function SummaryMicroBars() {
       <div className="mt-8 pt-4 border-t border-border">
         <div className="grid grid-cols-2 gap-x-12 gap-y-3">
           <div className="flex justify-between items-baseline">
-            <span className="text-xs font-mono uppercase tracking-widest text-foreground/80">
+            <span className="text-xs font-mono uppercase tracking-widest text-foreground">
               Base Weight
             </span>
-            <span className="text-sm font-mono tabular-nums text-foreground/80">
+            <span className="text-sm font-mono tabular-nums text-foreground">
               {formatWeight(summary.baseWeight)}
             </span>
           </div>
           <div className="flex justify-between items-baseline">
-            <span className="text-xs font-mono uppercase tracking-widest text-emerald-600/80">
+            <span className="text-xs font-mono uppercase tracking-widest text-emerald-600">
               Consumables
             </span>
-            <span className="text-sm font-mono tabular-nums text-emerald-600/80">
+            <span className="text-sm font-mono tabular-nums text-emerald-600">
               {formatWeight(summary.consumables)}
             </span>
           </div>
           <div className="flex justify-between items-baseline">
-            <span className="text-xs font-mono uppercase tracking-widest text-blue-500/80">
+            <span className="text-xs font-mono uppercase tracking-widest text-blue-500">
               Worn
             </span>
-            <span className="text-sm font-mono tabular-nums text-blue-500/80">
+            <span className="text-sm font-mono tabular-nums text-blue-500">
               {formatWeight(summary.worn)}
             </span>
           </div>

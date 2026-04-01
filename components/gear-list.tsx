@@ -42,10 +42,10 @@ export function GearList() {
                   {/* Classification */}
                   <span className={`text-[10px] font-mono uppercase tracking-wider shrink-0 ${
                     item.classification === 'base' 
-                      ? 'text-muted-foreground' 
+                      ? 'text-foreground' 
                       : item.classification === 'worn' 
-                        ? 'text-foreground/70' 
-                        : 'text-muted-foreground/60'
+                        ? 'text-blue-500' 
+                        : 'text-emerald-600'
                   }`}>
                     {item.classification === 'consumable' ? 'cons' : item.classification}
                   </span>
