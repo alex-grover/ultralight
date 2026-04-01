@@ -26,7 +26,7 @@ export const categories: Category[] = [
     items: [
       { item: "tarp", name: "MYOG 6x9 1.1 silpoly", description: "", classification: "base", weight: 219 },
       { item: "bivy", name: "MYOG", description: "", classification: "base", weight: 154 },
-      { item: "poles", name: "3F UL C1 trekking pole", description: "pair", classification: "base", weight: 364 },
+      { item: "poles", name: "3F UL C1 trekking pole", description: "pair", classification: "worn", weight: 364 },
       { item: "guylines", name: "8 + tensioners", description: "", classification: "base", weight: 58 },
       { item: "stakes", name: "carbon fiber", description: "", classification: "base", weight: 2 },
     ],
@@ -62,19 +62,19 @@ export const categories: Category[] = [
     name: "Hygiene",
     items: [
       { item: "trowel", name: "Bogler", description: "", classification: "base", weight: 14 },
-      { item: "tp", name: "Toilet paper", description: "1/2 roll + 2 ziplock bags", classification: "base", weight: 48 },
-      { item: "soap", name: "Dr. Bronners", description: "", classification: "base", weight: 11 },
+      { item: "tp", name: "Toilet paper", description: "1/2 roll + 2 ziplock bags", classification: "consumable", weight: 48 },
+      { item: "soap", name: "Dr. Bronners", description: "", classification: "consumable", weight: 11 },
       { item: "toothbrush", name: "Bamboo", description: "", classification: "base", weight: 6 },
-      { item: "toothpaste", name: "Travel size", description: "", classification: "base", weight: 8 },
-      { item: "sunscreen", name: "SPF 50", description: "", classification: "base", weight: 30 },
-      { item: "chapstick", name: "SPF 15", description: "", classification: "base", weight: 8 },
+      { item: "toothpaste", name: "Travel size", description: "", classification: "consumable", weight: 8 },
+      { item: "sunscreen", name: "SPF 50", description: "", classification: "consumable", weight: 30 },
+      { item: "chapstick", name: "SPF 15", description: "", classification: "consumable", weight: 8 },
       { item: "bottles", name: "1oz flip top", description: "", classification: "base", weight: 8 },
     ],
   },
   {
     name: "Tech",
     items: [
-      { item: "phone", name: "iPhone 15 Pro w/ case", description: "", classification: "worn", weight: 226 },
+      { item: "phone", name: "iPhone 15 Pro w/ case", description: "", classification: "base", weight: 226 },
       { item: "cable", name: "Apple C-C w/ velcro tie", description: "", classification: "base", weight: 19 },
       { item: "battery", name: "Nitecore NB10000 gen 1", description: "", classification: "base", weight: 151 },
     ],
@@ -87,7 +87,7 @@ export const categories: Category[] = [
       { item: "lighter", name: "Mini bic", description: "", classification: "base", weight: 11 },
       { item: "flashlight", name: "RovyVon Aurora A5", description: "", classification: "base", weight: 22 },
       { item: "storage", name: "Gallon ziplock bag", description: "", classification: "base", weight: 9 },
-      { item: "cards", name: "House key, ID, credit card, cash", description: "", classification: "worn", weight: 20 },
+      { item: "cards", name: "House key, ID, credit card, cash", description: "", classification: "base", weight: 20 },
     ],
   },
   {
