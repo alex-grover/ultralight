@@ -34,16 +34,7 @@ export function Header() {
           </div>
         </div>
 
-        {/* Bottom divider with grid aesthetic */}
-        <div className="mt-6 flex items-center gap-2">
-          <div className="h-px flex-1 bg-border" />
-          <div className="flex gap-1">
-            <div className="w-1 h-1 bg-muted-foreground/40" />
-            <div className="w-1 h-1 bg-muted-foreground/40" />
-            <div className="w-1 h-1 bg-muted-foreground/40" />
-          </div>
-          <div className="h-px flex-1 bg-border" />
-        </div>
+
       </div>
     </header>
   )
