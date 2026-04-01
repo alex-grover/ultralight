@@ -20,11 +20,17 @@ export function ThemeToggle() {
     setTheme(themes[nextIndex])
   }
 
+  // Show skeleton until mounted to avoid flash of wrong icon
+  if (!mounted) {
+    return (
+      <div className="w-8 h-8 flex items-center justify-center">
+        <div className="w-4 h-4 rounded-full bg-muted animate-pulse" />
+      </div>
+    )
+  }
+
   // Use resolvedTheme for the icon display (actual light/dark), but show Monitor for system
   const getIcon = () => {
-    if (!mounted) {
-      return <Sun className="w-4 h-4" strokeWidth={1.5} />
-    }
     if (theme === "system") {
       return <Monitor className="w-4 h-4" strokeWidth={1.5} />
     }
