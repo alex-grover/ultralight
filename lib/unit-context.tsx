@@ -30,7 +30,8 @@ export function UnitProvider({ children }: { children: ReactNode }) {
   }
 
   const formatWeight = (grams: number): string => {
-    const rounded = Math.round(grams)
+    // Round to 0.1g precision to avoid floating point issues
+    const rounded = Math.round(grams * 10) / 10
     
     if (!mounted) {
       return `${rounded} g`
