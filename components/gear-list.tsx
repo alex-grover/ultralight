@@ -30,7 +30,7 @@ export function GearList() {
                   className="flex items-baseline gap-4 py-2 border-b border-border/50 last:border-0"
                 >
                   {/* Item type */}
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground w-14 shrink-0">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground w-20 md:w-24 shrink-0">
                     {item.item}
                   </span>
                   
