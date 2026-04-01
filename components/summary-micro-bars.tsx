@@ -1,7 +1,7 @@
 import { categories, computeSummary, computeCategoryWeights, formatWeight } from "@/lib/gear-data"
 
 export function SummaryMicroBars() {
-  // Compute weight distribution from categories
+  // Compute weight distribution from gear categories
   const categoryWeights = computeCategoryWeights(categories)
   const summary = computeSummary(categories)
   const maxWeight = Math.max(...categoryWeights.map((c) => c.weight))
