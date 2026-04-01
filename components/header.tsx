@@ -1,6 +1,7 @@
 "use client"
 
 import { UnitSelector } from "./unit-selector"
+import { ThemeToggle } from "./theme-toggle"
 
 export function Header() {
   return (
@@ -16,8 +17,11 @@ export function Header() {
             <div className="h-px w-16 bg-foreground mt-1" />
           </div>
           
-          {/* Unit selector */}
-          <UnitSelector />
+          {/* Controls - unit selector and theme toggle */}
+          <div className="flex items-center gap-4">
+            <UnitSelector />
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </header>
