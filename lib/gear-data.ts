@@ -76,7 +76,7 @@ export const categories: Category[] = [
     items: [
       { item: "phone", name: "iPhone 15 Pro w/ case", description: "", classification: "worn", weight: 226 },
       { item: "cable", name: "Apple C-C w/ velcro tie", description: "", classification: "base", weight: 19 },
-      { item: "battery", name: "Nitecore NB10000 gen 1", description: "", classification: "consumable", weight: 151 },
+      { item: "battery", name: "Nitecore NB10000 gen 1", description: "", classification: "base", weight: 151 },
     ],
   },
   {

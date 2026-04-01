@@ -109,26 +109,26 @@ export function SummaryMicroBars() {
       <div className="mt-8 pt-4 border-t border-border">
         <div className="grid grid-cols-2 gap-x-12 gap-y-3">
           <div className="flex justify-between items-baseline">
-            <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+            <span className="text-xs font-mono uppercase tracking-widest text-foreground/80">
               Base Weight
             </span>
-            <span className="text-sm font-mono tabular-nums">
+            <span className="text-sm font-mono tabular-nums text-foreground/80">
               {formatWeight(summary.baseWeight)}
             </span>
           </div>
           <div className="flex justify-between items-baseline">
-            <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+            <span className="text-xs font-mono uppercase tracking-widest text-emerald-600/80">
               Consumables
             </span>
-            <span className="text-sm font-mono tabular-nums">
+            <span className="text-sm font-mono tabular-nums text-emerald-600/80">
               {formatWeight(summary.consumables)}
             </span>
           </div>
           <div className="flex justify-between items-baseline">
-            <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+            <span className="text-xs font-mono uppercase tracking-widest text-blue-500/80">
               Worn
             </span>
-            <span className="text-sm font-mono tabular-nums">
+            <span className="text-sm font-mono tabular-nums text-blue-500/80">
               {formatWeight(summary.worn)}
             </span>
           </div>
@@ -136,7 +136,7 @@ export function SummaryMicroBars() {
             <span className="text-xs font-mono uppercase tracking-widest text-foreground">
               Total
             </span>
-            <span className="text-sm font-mono tabular-nums font-semibold">
+            <span className="text-sm font-mono tabular-nums font-semibold text-foreground">
               {formatWeight(summary.total)}
             </span>
           </div>
