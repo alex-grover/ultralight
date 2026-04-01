@@ -10,11 +10,11 @@ export function GearList() {
   const getClassificationIcon = (classification: string) => {
     switch (classification) {
       case "base":
-        return <Package className="w-4 h-4" />
+        return <Package className="w-3 h-3" strokeWidth={1.5} />
       case "worn":
-        return <Shirt className="w-4 h-4" />
+        return <Shirt className="w-3 h-3" strokeWidth={1.5} />
       case "consumable":
-        return <Droplet className="w-4 h-4" />
+        return <Droplet className="w-3 h-3" strokeWidth={1.5} />
       default:
         return null
     }
@@ -67,7 +67,7 @@ export function GearList() {
                   </span>
                   
                   {/* Classification Icon */}
-                  <div className={`w-5 h-5 shrink-0 flex items-center justify-center ${getClassificationColor(item.classification)}`}>
+                  <div className={`w-4 h-4 shrink-0 flex items-center justify-center ${getClassificationColor(item.classification)}`}>
                     {getClassificationIcon(item.classification)}
                   </div>
                   
