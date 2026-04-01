@@ -1,36 +1,94 @@
 "use client"
 
+import { useState } from "react"
 import { categories, computeSummary, computeCategoryWeights } from "@/lib/gear-data"
 import { useUnit } from "@/lib/unit-context"
 
 export function SummaryMicroBars() {
   const { formatWeight } = useUnit()
-  const categoryWeights = computeCategoryWeights(categories)
+  const [hoveredCategory, setHoveredCategory] = useState<string | null>(null)
+  
   const summary = computeSummary(categories)
-  const maxWeight = Math.max(...categoryWeights.map((c) => c.weight))
-  const totalCategoryWeight = categoryWeights.reduce((sum, c) => sum + c.weight, 0)
+  
+  // Compute weight breakdown per category by classification
+  const categoryBreakdown = categories.map((cat) => {
+    const base = cat.items
+      .filter((i) => i.classification === "base")
+      .reduce((sum, i) => sum + i.weight, 0)
+    const worn = cat.items
+      .filter((i) => i.classification === "worn")
+      .reduce((sum, i) => sum + i.weight, 0)
+    const consumable = cat.items
+      .filter((i) => i.classification === "consumable")
+      .reduce((sum, i) => sum + i.weight, 0)
+    const total = base + worn + consumable
+    
+    return { name: cat.name, base, worn, consumable, total }
+  })
+  
+  const maxWeight = Math.max(...categoryBreakdown.map((c) => c.total))
+  const totalCategoryWeight = categoryBreakdown.reduce((sum, c) => sum + c.total, 0)
 
   return (
     <div className="space-y-1">
       {/* Category bars */}
       <div className="space-y-2">
-        {categoryWeights.map((category) => {
-          const percentage = (category.weight / maxWeight) * 100
-          const totalPercentage = (category.weight / totalCategoryWeight) * 100
+        {categoryBreakdown.map((category) => {
+          const percentage = (category.total / maxWeight) * 100
+          const totalPercentage = (category.total / totalCategoryWeight) * 100
+          
+          const basePercent = (category.base / category.total) * 100
+          const wornPercent = (category.worn / category.total) * 100
+          const consumablePercent = (category.consumable / category.total) * 100
 
           return (
-            <div key={category.name} className="group flex items-center gap-3">
+            <div key={category.name} className="group flex items-center gap-3 relative">
               {/* Category name */}
               <span className="w-20 shrink-0 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
                 {category.name}
               </span>
 
-              {/* Bar container */}
-              <div className="flex-1 h-2 bg-muted/30 relative">
+              {/* Segmented bar container */}
+              <div
+                className="flex-1 h-2 bg-muted/30 relative cursor-pointer transition-opacity hover:opacity-80"
+                style={{ width: `${percentage}%` }}
+                onMouseEnter={() => setHoveredCategory(category.name)}
+                onMouseLeave={() => setHoveredCategory(null)}
+                onTouchStart={() => setHoveredCategory(category.name)}
+                onTouchEnd={() => setHoveredCategory(null)}
+              >
+                {/* Base segment - foreground (black) */}
                 <div
-                  className="absolute inset-y-0 left-0 bg-foreground/80 transition-all duration-300"
-                  style={{ width: `${percentage}%` }}
+                  className="absolute inset-y-0 left-0 bg-foreground/80"
+                  style={{ width: `${basePercent}%` }}
                 />
+                
+                {/* Worn segment - subtle blue */}
+                <div
+                  className="absolute inset-y-0 bg-blue-500/60"
+                  style={{
+                    left: `${basePercent}%`,
+                    width: `${wornPercent}%`,
+                  }}
+                />
+                
+                {/* Consumable segment - subtle green */}
+                <div
+                  className="absolute inset-y-0 bg-emerald-600/60"
+                  style={{
+                    left: `${basePercent + wornPercent}%`,
+                    width: `${consumablePercent}%`,
+                  }}
+                />
+
+                {/* Tooltip */}
+                {hoveredCategory === category.name && (
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-foreground text-background text-[9px] font-mono whitespace-nowrap rounded pointer-events-none z-10">
+                    <div>Base: {formatWeight(category.base)}</div>
+                    <div>Worn: {formatWeight(category.worn)}</div>
+                    <div>Cons: {formatWeight(category.consumable)}</div>
+                  </div>
+                )}
               </div>
 
               {/* Percentage */}
@@ -40,7 +98,7 @@ export function SummaryMicroBars() {
 
               {/* Weight */}
               <span className="w-16 text-xs font-mono tabular-nums text-foreground text-right">
-                {formatWeight(category.weight)}
+                {formatWeight(category.total)}
               </span>
             </div>
           )
