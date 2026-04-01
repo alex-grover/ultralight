@@ -54,7 +54,7 @@ export function GearList() {
               {category.items.map((item, index) => (
                 <div
                   key={`${category.name}-${index}`}
-                  className="flex items-baseline gap-3 py-2 border-b border-border/50 last:border-0"
+                  className="flex items-center gap-3 py-2 border-b border-border/50 last:border-0"
                 >
                   {/* Item type (label) */}
                   <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground w-20 shrink-0">
