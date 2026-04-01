@@ -23,20 +23,21 @@ export function GearList() {
               {category.items.map((item, index) => (
                 <div
                   key={`${category.name}-${index}`}
-                  className="flex items-baseline gap-4 py-2 border-b border-border/50 last:border-0"
+                  className="flex flex-wrap items-baseline gap-x-3 gap-y-1 py-2 border-b border-border/50 last:border-0"
                 >
-                  {/* Item type */}
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground w-14 shrink-0">
+                  {/* Row 1: Item type + Name */}
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
                     {item.item}
                   </span>
-                  
-                  {/* Name */}
-                  <span className="text-sm text-foreground flex-1 min-w-0 truncate">
+                  <span className="text-sm text-foreground">
                     {item.name}
                   </span>
                   
+                  {/* Spacer to push classification and weight to the right */}
+                  <span className="flex-1" />
+                  
                   {/* Classification */}
-                  <span className={`text-[10px] font-mono uppercase tracking-wider shrink-0 ${
+                  <span className={`text-[10px] font-mono uppercase tracking-wider ${
                     item.classification === 'base' 
                       ? 'text-muted-foreground' 
                       : item.classification === 'worn' 
@@ -47,7 +48,7 @@ export function GearList() {
                   </span>
                   
                   {/* Weight */}
-                  <span className="text-xs font-mono tabular-nums text-foreground w-14 text-right shrink-0">
+                  <span className="text-xs font-mono tabular-nums text-foreground w-12 text-right">
                     {formatWeight(item.weight)}
                   </span>
                 </div>
