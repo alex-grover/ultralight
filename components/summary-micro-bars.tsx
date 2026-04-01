@@ -1,8 +1,10 @@
-import { categories, summary, formatWeight } from "@/lib/gear-data"
+import { categories, computeSummary, computeCategoryWeights, formatWeight } from "@/lib/gear-data"
 
 export function SummaryMicroBars() {
-  const maxWeight = Math.max(...categories.map((c) => c.weight))
-  const totalCategoryWeight = categories.reduce((sum, c) => sum + c.weight, 0)
+  const categoryWeights = computeCategoryWeights(categories)
+  const summary = computeSummary(categories)
+  const maxWeight = Math.max(...categoryWeights.map((c) => c.weight))
+  const totalCategoryWeight = categoryWeights.reduce((sum, c) => sum + c.weight, 0)
 
   return (
     <section className="border-t border-border">
@@ -17,7 +19,7 @@ export function SummaryMicroBars() {
 
         {/* Micro-bar table */}
         <div className="space-y-1">
-          {categories.map((category) => {
+          {categoryWeights.map((category) => {
             const percentage = (category.weight / maxWeight) * 100
             const totalPercentage = (category.weight / totalCategoryWeight) * 100
             return (
