@@ -29,7 +29,6 @@ export const categories: Category[] = [
       { item: "bivy", name: "MYOG", description: "", classification: "base", weight: 153.9, quantity: 1 },
       { item: "poles", name: "3F UL C1 trekking pole", description: "pair", classification: "worn", weight: 364.4, quantity: 1 },
       { item: "guylines", name: "8 + tensioners", description: "", classification: "base", weight: 58, quantity: 1 },
-      { item: "groundsheet", name: "Polycryo", description: "", classification: "base", weight: 36, quantity: 1 },
       { item: "stakes", name: "carbon fiber", description: "", classification: "base", weight: 2, quantity: 6 },
     ],
   },
@@ -133,8 +132,11 @@ export function computeSummary(cats: Category[]) {
       } else if (item.classification === "consumable") {
         consumables += itemTotalWeight
       } else if (item.classification === "worn") {
-        // All worn items count as worn weight (matching lighterpack behavior)
-        worn += itemTotalWeight
+        // For worn items with quantity > 1, only 1 counts as worn, rest as base
+        worn += item.weight
+        if (item.quantity > 1) {
+          baseWeight += item.weight * (item.quantity - 1)
+        }
       }
     }
   }
@@ -163,16 +165,22 @@ export type CategoryBreakdown = {
 }
 
 // Compute weight breakdown per category by classification
-// All items count their full quantity toward their classification
+// For worn items with quantity > 1, only 1 counts as worn, rest as base
 export function computeCategoryBreakdown(cats: Category[]): CategoryBreakdown[] {
   return cats.map((cat) => {
-    const base = cat.items
+    let base = cat.items
       .filter((i) => i.classification === "base")
       .reduce((sum, i) => sum + i.weight * i.quantity, 0)
     
+    // Add extra worn items (quantity - 1) to base
+    base += cat.items
+      .filter((i) => i.classification === "worn" && i.quantity > 1)
+      .reduce((sum, i) => sum + i.weight * (i.quantity - 1), 0)
+    
+    // Only 1 of each worn item counts as worn
     const worn = cat.items
       .filter((i) => i.classification === "worn")
-      .reduce((sum, i) => sum + i.weight * i.quantity, 0)
+      .reduce((sum, i) => sum + i.weight, 0)
     
     const consumable = cat.items
       .filter((i) => i.classification === "consumable")
