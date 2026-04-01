@@ -27,25 +27,25 @@ export function GearList() {
               {category.items.map((item, index) => (
                 <div
                   key={`${category.name}-${index}`}
-                  className="grid grid-cols-[5rem_md:6rem_1fr_2rem_3rem_3.5rem] gap-3 items-baseline py-2 border-b border-border/50 last:border-0"
+                  className="flex items-baseline gap-3 py-2 border-b border-border/50 last:border-0"
                 >
                   {/* Item type */}
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground w-20 shrink-0">
                     {item.item}
                   </span>
                   
                   {/* Name */}
-                  <span className="text-sm text-foreground min-w-0 truncate col-span-1 md:col-span-1">
+                  <span className="text-sm text-foreground flex-1 min-w-0 truncate">
                     {item.name}
                   </span>
                   
                   {/* Quantity */}
-                  <span className="text-xs font-mono text-muted-foreground text-center">
+                  <span className="text-xs font-mono text-muted-foreground w-6 text-center shrink-0">
                     {item.quantity}
                   </span>
                   
                   {/* Classification */}
-                  <span className={`text-[10px] font-mono uppercase tracking-wider ${
+                  <span className={`text-[10px] font-mono uppercase tracking-wider w-10 shrink-0 ${
                     item.classification === 'base' 
                       ? 'text-foreground' 
                       : item.classification === 'worn' 
@@ -56,7 +56,7 @@ export function GearList() {
                   </span>
                   
                   {/* Weight */}
-                  <span className="text-xs font-mono tabular-nums text-foreground text-right">
+                  <span className="text-xs font-mono tabular-nums text-foreground w-16 text-right shrink-0">
                     {formatWeight(item.weight * item.quantity)}
                   </span>
                 </div>
