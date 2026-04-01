@@ -63,7 +63,7 @@ export const categories: Category[] = [
     name: "Hygiene",
     items: [
       { item: "trowel", name: "Bogler", description: "", classification: "base", weight: 13.5, quantity: 1 },
-      { item: "tp", name: "Toilet paper", description: "1/2 roll + 2 ziplock bags", classification: "consumable", weight: 48.1, quantity: 1 },
+      { item: "tp", name: "Toilet paper", description: "1/2 roll + 2 ziplock bags", classification: "base", weight: 48.1, quantity: 1 },
       { item: "soap", name: "Dr. Bronners", description: "", classification: "consumable", weight: 11.1, quantity: 1 },
       { item: "toothbrush", name: "Bamboo", description: "", classification: "base", weight: 6.3, quantity: 1 },
       { item: "toothpaste", name: "Travel size", description: "", classification: "consumable", weight: 7.7, quantity: 1 },
@@ -108,7 +108,7 @@ export const categories: Category[] = [
       { item: "lunch", name: "Beans, rice, Fritos, sauce", description: "600 cals", classification: "consumable", weight: 165, quantity: 2 },
       { item: "water", name: "Water 1L", description: "", classification: "consumable", weight: 1000, quantity: 1 },
       { item: "caffeine", name: "Caffeine pills", description: "", classification: "consumable", weight: 0.6, quantity: 12 },
-      { item: "pill bag", name: "Pill bag", description: "", classification: "consumable", weight: 0.7, quantity: 1 },
+      { item: "pill bag", name: "Pill bag", description: "", classification: "base", weight: 0.7, quantity: 1 },
       { item: "bars", name: "Clif builders", description: "280 cals", classification: "consumable", weight: 68, quantity: 1 },
       { item: "oatmeal", name: "Oatmeal packets", description: "150 cals each", classification: "consumable", weight: 43, quantity: 2 },
       { item: "dinner", name: "Ramen + instant potatoes", description: "535 cals", classification: "consumable", weight: 155, quantity: 1 },
