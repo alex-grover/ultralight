@@ -13,6 +13,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>("light")
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     // Check localStorage and system preference
@@ -22,6 +23,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     
     setThemeState(initialTheme)
     applyTheme(initialTheme)
+    setMounted(true)
   }, [])
 
   const setTheme = (newTheme: Theme) => {
@@ -41,7 +43,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
+      <div suppressHydrationWarning>
+        {mounted ? children : <>{children}</>}
+      </div>
     </ThemeContext.Provider>
   )
 }

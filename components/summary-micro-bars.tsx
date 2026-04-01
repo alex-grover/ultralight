@@ -69,9 +69,9 @@ export function SummaryMicroBars() {
                 {/* Tooltip */}
                 {hoveredCategory === category.name && (
                   <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-foreground text-background text-[9px] font-mono whitespace-nowrap rounded pointer-events-none z-10">
-                    <div>Base: {formatWeight(category.base)}</div>
-                    <div>Worn: {formatWeight(category.worn)}</div>
-                    <div>Cons: {formatWeight(category.consumable)}</div>
+                    {category.base > 0 && <div>Base: {formatWeight(category.base)}</div>}
+                    {category.worn > 0 && <div>Worn: {formatWeight(category.worn)}</div>}
+                    {category.consumable > 0 && <div>Cons: {formatWeight(category.consumable)}</div>}
                   </div>
                 )}
               </div>
