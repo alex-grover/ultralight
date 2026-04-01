@@ -11,13 +11,22 @@ export function SummaryMicroBars() {
   const summary = computeSummary(categories)
   
   // Compute weight breakdown per category by classification
+  // For worn items with quantity > 1, only 1 counts as worn, rest as base
   const categoryBreakdown = categories.map((cat) => {
-    const base = cat.items
+    let base = cat.items
       .filter((i) => i.classification === "base")
       .reduce((sum, i) => sum + i.weight * i.quantity, 0)
+    
+    // Add extra worn items (quantity - 1) to base
+    base += cat.items
+      .filter((i) => i.classification === "worn" && i.quantity > 1)
+      .reduce((sum, i) => sum + i.weight * (i.quantity - 1), 0)
+    
+    // Only 1 of each worn item counts as worn
     const worn = cat.items
       .filter((i) => i.classification === "worn")
-      .reduce((sum, i) => sum + i.weight * i.quantity, 0)
+      .reduce((sum, i) => sum + i.weight, 0)
+    
     const consumable = cat.items
       .filter((i) => i.classification === "consumable")
       .reduce((sum, i) => sum + i.weight * i.quantity, 0)
