@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { categories, computeSummary, computeCategoryWeights } from "@/lib/gear-data"
+import { categories, computeSummary, computeCategoryBreakdown } from "@/lib/gear-data"
 import { useUnit } from "@/lib/unit-context"
 
 export function SummaryMicroBars() {
@@ -9,31 +9,7 @@ export function SummaryMicroBars() {
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null)
   
   const summary = computeSummary(categories)
-  
-  // Compute weight breakdown per category by classification
-  // For worn items with quantity > 1, only 1 counts as worn, rest as base
-  const categoryBreakdown = categories.map((cat) => {
-    let base = cat.items
-      .filter((i) => i.classification === "base")
-      .reduce((sum, i) => sum + i.weight * i.quantity, 0)
-    
-    // Add extra worn items (quantity - 1) to base
-    base += cat.items
-      .filter((i) => i.classification === "worn" && i.quantity > 1)
-      .reduce((sum, i) => sum + i.weight * (i.quantity - 1), 0)
-    
-    // Only 1 of each worn item counts as worn
-    const worn = cat.items
-      .filter((i) => i.classification === "worn")
-      .reduce((sum, i) => sum + i.weight, 0)
-    
-    const consumable = cat.items
-      .filter((i) => i.classification === "consumable")
-      .reduce((sum, i) => sum + i.weight * i.quantity, 0)
-    const total = base + worn + consumable
-    
-    return { name: cat.name, base, worn, consumable, total }
-  })
+  const categoryBreakdown = computeCategoryBreakdown(categories)
   
   const maxWeight = Math.max(...categoryBreakdown.map((c) => c.total))
   const totalCategoryWeight = categoryBreakdown.reduce((sum, c) => sum + c.total, 0)

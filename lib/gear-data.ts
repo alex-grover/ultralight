@@ -156,6 +156,42 @@ export function computeCategoryWeights(cats: Category[]) {
   }))
 }
 
+export type CategoryBreakdown = {
+  name: string
+  base: number
+  worn: number
+  consumable: number
+  total: number
+}
+
+// Compute weight breakdown per category by classification
+// For worn items with quantity > 1, only 1 counts as worn, rest as base
+export function computeCategoryBreakdown(cats: Category[]): CategoryBreakdown[] {
+  return cats.map((cat) => {
+    let base = cat.items
+      .filter((i) => i.classification === "base")
+      .reduce((sum, i) => sum + i.weight * i.quantity, 0)
+    
+    // Add extra worn items (quantity - 1) to base
+    base += cat.items
+      .filter((i) => i.classification === "worn" && i.quantity > 1)
+      .reduce((sum, i) => sum + i.weight * (i.quantity - 1), 0)
+    
+    // Only 1 of each worn item counts as worn
+    const worn = cat.items
+      .filter((i) => i.classification === "worn")
+      .reduce((sum, i) => sum + i.weight, 0)
+    
+    const consumable = cat.items
+      .filter((i) => i.classification === "consumable")
+      .reduce((sum, i) => sum + i.weight * i.quantity, 0)
+    
+    const total = base + worn + consumable
+    
+    return { name: cat.name, base, worn, consumable, total }
+  })
+}
+
 export function formatWeight(grams: number): string {
   if (grams >= 1000) {
     return `${(grams / 1000).toFixed(2)} kg`
