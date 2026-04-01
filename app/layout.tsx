@@ -38,7 +38,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-background">
       <body className="font-sans antialiased">
-        <UnitProvider>{children}</UnitProvider>
+        <UnitProvider>
+          {children}
+        </UnitProvider>
         <Analytics />
       </body>
     </html>

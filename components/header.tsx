@@ -1,3 +1,5 @@
+import { UnitSelector } from "./unit-selector"
+
 export function Header() {
   return (
     <header className="border-b border-border">
@@ -5,7 +7,7 @@ export function Header() {
         {/* Top row - technical details */}
         <div className="flex items-center justify-between text-[10px] tracking-[0.2em] text-muted-foreground uppercase font-mono mb-4">
           <span>Personal Gear System</span>
-          <span>v1.0</span>
+          <UnitSelector />
         </div>
         
         {/* Main title block */}
