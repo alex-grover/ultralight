@@ -1,10 +1,37 @@
 "use client"
 
+import { Package, Shirt, Droplet } from "lucide-react"
 import { categories } from "@/lib/gear-data"
 import { useUnit } from "@/lib/unit-context"
 
 export function GearList() {
   const { formatWeight } = useUnit()
+  
+  const getClassificationIcon = (classification: string) => {
+    switch (classification) {
+      case "base":
+        return <Package className="w-4 h-4" />
+      case "worn":
+        return <Shirt className="w-4 h-4" />
+      case "consumable":
+        return <Droplet className="w-4 h-4" />
+      default:
+        return null
+    }
+  }
+  
+  const getClassificationColor = (classification: string) => {
+    switch (classification) {
+      case "base":
+        return "text-foreground"
+      case "worn":
+        return "text-blue-500"
+      case "consumable":
+        return "text-emerald-600"
+      default:
+        return "text-muted-foreground"
+    }
+  }
   return (
     <div className="space-y-8">
       {categories.map((category) => {
@@ -39,16 +66,10 @@ export function GearList() {
                     {item.name}
                   </span>
                   
-                  {/* Classification */}
-                  <span className={`text-[10px] font-mono uppercase tracking-wider w-10 shrink-0 ${
-                    item.classification === 'base' 
-                      ? 'text-foreground' 
-                      : item.classification === 'worn' 
-                        ? 'text-blue-500' 
-                        : 'text-emerald-600'
-                  }`}>
-                    {item.classification === 'consumable' ? 'cons' : item.classification}
-                  </span>
+                  {/* Classification Icon */}
+                  <div className={`w-5 h-5 shrink-0 flex items-center justify-center ${getClassificationColor(item.classification)}`}>
+                    {getClassificationIcon(item.classification)}
+                  </div>
                   
                   {/* Quantity */}
                   <span className="text-xs font-mono text-muted-foreground w-6 text-center shrink-0">
