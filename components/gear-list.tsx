@@ -1,6 +1,10 @@
-import { categories, formatWeight } from "@/lib/gear-data"
+"use client"
+
+import { categories } from "@/lib/gear-data"
+import { useUnit } from "@/lib/unit-context"
 
 export function GearList() {
+  const { formatWeight } = useUnit()
   return (
     <div className="space-y-8">
       {categories.map((category) => {

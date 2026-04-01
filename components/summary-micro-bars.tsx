@@ -1,7 +1,10 @@
-import { categories, computeSummary, computeCategoryWeights, formatWeight } from "@/lib/gear-data"
+"use client"
+
+import { categories, computeSummary, computeCategoryWeights } from "@/lib/gear-data"
+import { useUnit } from "@/lib/unit-context"
 
 export function SummaryMicroBars() {
-  // Compute weight distribution from gear categories
+  const { formatWeight } = useUnit()
   const categoryWeights = computeCategoryWeights(categories)
   const summary = computeSummary(categories)
   const maxWeight = Math.max(...categoryWeights.map((c) => c.weight))

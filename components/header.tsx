@@ -1,3 +1,5 @@
+"use client"
+
 import { UnitSelector } from "./unit-selector"
 
 export function Header() {
