@@ -105,8 +105,15 @@ export const categories: Category[] = [
   {
     name: "Food",
     items: [
-      { item: "lunch", name: "Beans, rice, Fritos, sauce", description: "600 cals", classification: "consumable", weight: 165, quantity: 1 },
+      { item: "lunch", name: "Beans, rice, Fritos, sauce", description: "600 cals", classification: "consumable", weight: 165, quantity: 2 },
       { item: "water", name: "Water 1L", description: "", classification: "consumable", weight: 1000, quantity: 1 },
+      { item: "caffeine", name: "Caffeine pills", description: "", classification: "consumable", weight: 0.6, quantity: 12 },
+      { item: "pill bag", name: "Pill bag", description: "", classification: "consumable", weight: 0.7, quantity: 1 },
+      { item: "bars", name: "Clif builders", description: "280 cals", classification: "consumable", weight: 68, quantity: 1 },
+      { item: "oatmeal", name: "Oatmeal packets", description: "150 cals each", classification: "consumable", weight: 43, quantity: 2 },
+      { item: "dinner", name: "Ramen + instant potatoes", description: "535 cals", classification: "consumable", weight: 155, quantity: 1 },
+      { item: "hot sauce", name: "Taco Bell diablo", description: "", classification: "consumable", weight: 28, quantity: 1 },
+      { item: "electrolytes", name: "Gatorade Zero pouch", description: "", classification: "consumable", weight: 3.6, quantity: 2 },
     ],
   },
 ]
