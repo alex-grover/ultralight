@@ -54,51 +54,41 @@ export function SummaryMicroBars() {
           })}
         </div>
 
-        {/* Divider */}
-        <div className="my-4 h-px bg-border" />
-
-        {/* Totals - compact horizontal layout */}
-        <div className="flex items-baseline gap-6 flex-wrap">
-          <div className="flex items-baseline gap-2">
-            <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
-              Base
-            </span>
-            <span className="text-sm font-mono tabular-nums">
-              {formatWeight(summary.baseWeight)}
-            </span>
-          </div>
-          
-          <span className="text-muted-foreground/30">|</span>
-          
-          <div className="flex items-baseline gap-2">
-            <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
-              Consumable
-            </span>
-            <span className="text-sm font-mono tabular-nums">
-              {formatWeight(summary.consumables)}
-            </span>
-          </div>
-          
-          <span className="text-muted-foreground/30">|</span>
-          
-          <div className="flex items-baseline gap-2">
-            <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
-              Worn
-            </span>
-            <span className="text-sm font-mono tabular-nums">
-              {formatWeight(summary.worn)}
-            </span>
-          </div>
-          
-          <span className="text-muted-foreground/30">|</span>
-          
-          <div className="flex items-baseline gap-2">
-            <span className="text-[10px] font-mono uppercase tracking-widest text-foreground font-medium">
-              Total
-            </span>
-            <span className="text-sm font-mono tabular-nums font-semibold">
-              {formatWeight(summary.total)}
-            </span>
+        {/* Totals - 2 column grid */}
+        <div className="mt-8 pt-4 border-t border-border">
+          <div className="grid grid-cols-2 gap-x-12 gap-y-3">
+            <div className="flex justify-between items-baseline">
+              <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+                Base Weight
+              </span>
+              <span className="text-sm font-mono tabular-nums">
+                {formatWeight(summary.baseWeight)}
+              </span>
+            </div>
+            <div className="flex justify-between items-baseline">
+              <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+                Consumables
+              </span>
+              <span className="text-sm font-mono tabular-nums">
+                {formatWeight(summary.consumables)}
+              </span>
+            </div>
+            <div className="flex justify-between items-baseline">
+              <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+                Worn
+              </span>
+              <span className="text-sm font-mono tabular-nums">
+                {formatWeight(summary.worn)}
+              </span>
+            </div>
+            <div className="flex justify-between items-baseline">
+              <span className="text-xs font-mono uppercase tracking-widest text-foreground">
+                Total
+              </span>
+              <span className="text-sm font-mono tabular-nums font-semibold">
+                {formatWeight(summary.total)}
+              </span>
+            </div>
           </div>
         </div>
       </div>
