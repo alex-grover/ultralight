@@ -92,36 +92,36 @@ export function SummaryMicroBars() {
 
       {/* Totals - 2 column grid */}
       <div className="mt-8 pt-4 border-t border-border">
-        <div className="grid grid-cols-2 gap-x-12 gap-y-3">
-          <div className="flex justify-between items-baseline">
-            <span className="text-xs font-mono uppercase tracking-widest text-foreground">
+        <div className="grid grid-cols-2 gap-x-4 md:gap-x-12 gap-y-3">
+          <div className="flex justify-between items-baseline gap-2">
+            <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-foreground">
               Base Weight
             </span>
-            <span className="text-sm font-mono tabular-nums text-foreground">
+            <span className="text-xs md:text-sm font-mono tabular-nums text-foreground shrink-0">
               {formatWeight(summary.baseWeight)}
             </span>
           </div>
-          <div className="flex justify-between items-baseline">
-            <span className="text-xs font-mono uppercase tracking-widest text-emerald-600">
+          <div className="flex justify-between items-baseline gap-2">
+            <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-emerald-600">
               Consumables
             </span>
-            <span className="text-sm font-mono tabular-nums text-emerald-600">
+            <span className="text-xs md:text-sm font-mono tabular-nums text-emerald-600 shrink-0">
               {formatWeight(summary.consumables)}
             </span>
           </div>
-          <div className="flex justify-between items-baseline">
-            <span className="text-xs font-mono uppercase tracking-widest text-blue-500">
+          <div className="flex justify-between items-baseline gap-2">
+            <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-blue-500">
               Worn
             </span>
-            <span className="text-sm font-mono tabular-nums text-blue-500">
+            <span className="text-xs md:text-sm font-mono tabular-nums text-blue-500 shrink-0">
               {formatWeight(summary.worn)}
             </span>
           </div>
-          <div className="flex justify-between items-baseline">
-            <span className="text-xs font-mono uppercase tracking-widest text-foreground">
+          <div className="flex justify-between items-baseline gap-2">
+            <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-foreground">
               Total
             </span>
-            <span className="text-sm font-mono tabular-nums font-semibold text-foreground">
+            <span className="text-xs md:text-sm font-mono tabular-nums font-semibold text-foreground shrink-0">
               {formatWeight(summary.total)}
             </span>
           </div>
