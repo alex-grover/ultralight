@@ -68,7 +68,7 @@ export const categories: Category[] = [
       { item: "toothbrush", name: "Bamboo", description: "", classification: "base", weight: 6.3, quantity: 1 },
       { item: "toothpaste", name: "Travel size", description: "", classification: "consumable", weight: 7.7, quantity: 1 },
       { item: "sunscreen", name: "SPF 50", description: "", classification: "consumable", weight: 30, quantity: 1 },
-      { item: "chapstick", name: "SPF 15", description: "", classification: "consumable", weight: 8.2, quantity: 1 },
+      { item: "chapstick", name: "SPF 15", description: "", classification: "base", weight: 8.2, quantity: 1 },
       { item: "bottles", name: "1oz flip top", description: "", classification: "base", weight: 8, quantity: 3 },
     ],
   },
