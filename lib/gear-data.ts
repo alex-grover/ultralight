@@ -27,7 +27,7 @@ export const categories: Category[] = [
     items: [
       { item: "tarp", name: "MYOG 6x9 1.1 silpoly", description: "", classification: "base", weight: 219.4, quantity: 1 },
       { item: "bivy", name: "MYOG", description: "", classification: "base", weight: 153.9, quantity: 1 },
-      { item: "poles", name: "3F UL C1 trekking pole", description: "pair", classification: "worn", weight: 364.4, quantity: 1 },
+      { item: "poles", name: "3F UL C1 trekking pole", description: "pair", classification: "base", weight: 364.4, quantity: 1 },
       { item: "guylines", name: "8 + tensioners", description: "", classification: "base", weight: 58, quantity: 1 },
       { item: "stakes", name: "carbon fiber", description: "", classification: "base", weight: 2, quantity: 6 },
     ],
