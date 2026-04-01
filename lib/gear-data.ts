@@ -29,7 +29,7 @@ export const categories: Category[] = [
       { item: "bivy", name: "MYOG", description: "", classification: "base", weight: 154, quantity: 1 },
       { item: "poles", name: "3F UL C1 trekking pole", description: "pair", classification: "worn", weight: 364, quantity: 1 },
       { item: "guylines", name: "8 + tensioners", description: "", classification: "base", weight: 58, quantity: 1 },
-      { item: "stakes", name: "carbon fiber", description: "", classification: "base", weight: 2, quantity: 1 },
+      { item: "stakes", name: "carbon fiber", description: "", classification: "base", weight: 2, quantity: 6 },
     ],
   },
   {
@@ -47,7 +47,7 @@ export const categories: Category[] = [
       { item: "jar", name: "Cold soak jar 20oz", description: "", classification: "base", weight: 69, quantity: 1 },
       { item: "spoon", name: "Plastic", description: "", classification: "base", weight: 7, quantity: 1 },
       { item: "filter", name: "Sawyer Mini w/ bag", description: "", classification: "base", weight: 59, quantity: 1 },
-      { item: "bottle", name: "Smartwater 1L", description: "", classification: "base", weight: 40, quantity: 1 },
+      { item: "bottle", name: "Smartwater 1L", description: "", classification: "base", weight: 40, quantity: 2 },
     ],
   },
   {
@@ -69,7 +69,7 @@ export const categories: Category[] = [
       { item: "toothpaste", name: "Travel size", description: "", classification: "consumable", weight: 8, quantity: 1 },
       { item: "sunscreen", name: "SPF 50", description: "", classification: "consumable", weight: 30, quantity: 1 },
       { item: "chapstick", name: "SPF 15", description: "", classification: "consumable", weight: 8, quantity: 1 },
-      { item: "bottles", name: "1oz flip top", description: "", classification: "base", weight: 8, quantity: 1 },
+      { item: "bottles", name: "1oz flip top", description: "", classification: "base", weight: 8, quantity: 3 },
     ],
   },
   {
