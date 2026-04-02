@@ -1,6 +1,7 @@
 "use client"
 
-import { useUnit, type WeightUnit } from "@/lib/unit-context"
+import { useUnit } from "@/lib/unit-context"
+import type { WeightUnit } from "@/lib/cookies"
 
 const units: WeightUnit[] = ["g", "oz", "lb"]
 

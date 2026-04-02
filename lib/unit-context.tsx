@@ -1,8 +1,9 @@
 "use client"
 
-import { createContext, useContext, useState, useEffect, type ReactNode } from "react"
+import { createContext, useContext, useState, type ReactNode } from "react"
+import { UNIT_COOKIE, type WeightUnit } from "./cookies"
 
-export type WeightUnit = "g" | "oz" | "lb"
+export type { WeightUnit }
 
 type UnitContextType = {
   unit: WeightUnit
@@ -12,30 +13,24 @@ type UnitContextType = {
 
 const UnitContext = createContext<UnitContextType | null>(null)
 
-export function UnitProvider({ children }: { children: ReactNode }) {
-  const [unit, setUnitState] = useState<WeightUnit>("g")
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    const stored = localStorage.getItem("weight-unit") as WeightUnit | null
-    if (stored && ["g", "oz", "lb"].includes(stored)) {
-      setUnitState(stored)
-    }
-    setMounted(true)
-  }, [])
+export function UnitProvider({ 
+  children,
+  initialUnit = "g"
+}: { 
+  children: ReactNode
+  initialUnit?: WeightUnit
+}) {
+  const [unit, setUnitState] = useState<WeightUnit>(initialUnit)
 
   const setUnit = (newUnit: WeightUnit) => {
     setUnitState(newUnit)
-    localStorage.setItem("weight-unit", newUnit)
+    // Set cookie with 1 year expiry
+    document.cookie = `${UNIT_COOKIE}=${newUnit}; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Lax`
   }
 
   const formatWeight = (grams: number): string => {
     // Round to 0.1g precision to avoid floating point issues
     const rounded = Math.round(grams * 10) / 10
-
-    if (!mounted) {
-      return `${rounded} g`
-    }
 
     switch (unit) {
       case "oz":
