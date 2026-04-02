@@ -12,23 +12,11 @@ type UnitContextType = {
 
 const UnitContext = createContext<UnitContextType | null>(null)
 
-function getInitialUnit(): WeightUnit {
-  if (typeof window !== "undefined") {
-    // First check the data attribute set by pre-hydration script
-    const dataUnit = document.documentElement.getAttribute("data-weight-unit") as WeightUnit | null
-    if (dataUnit && ["g", "oz", "lb"].includes(dataUnit)) {
-      return dataUnit
-    }
-  }
-  return "g"
-}
-
 export function UnitProvider({ children }: { children: ReactNode }) {
-  const [unit, setUnitState] = useState<WeightUnit>(getInitialUnit)
+  const [unit, setUnitState] = useState<WeightUnit>("g")
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    // Sync with localStorage in case it changed
     const stored = localStorage.getItem("weight-unit") as WeightUnit | null
     if (stored && ["g", "oz", "lb"].includes(stored)) {
       setUnitState(stored)
@@ -44,6 +32,10 @@ export function UnitProvider({ children }: { children: ReactNode }) {
   const formatWeight = (grams: number): string => {
     // Round to 0.1g precision to avoid floating point issues
     const rounded = Math.round(grams * 10) / 10
+    
+    if (!mounted) {
+      return `${rounded} g`
+    }
     
     switch (unit) {
       case "oz":
