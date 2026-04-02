@@ -36,7 +36,7 @@ export const categories: Category[] = [
     name: "Sleep",
     items: [
       { item: "quilt", name: "MYOG Apex Quilt", description: "3.6osy, 45F", classification: "base", weight: 464.8, quantity: 1 },
-      { item: "pillow", name: "Big Sky", description: "", classification: "base", weight: 50, quantity: 1 },
+      { item: "pillow", name: "Exped Ultra Pillow", description: "", classification: "base", weight: 51, quantity: 1 },
       { item: "pad", name: "Featherstone El Cordion", description: "6 panels", classification: "base", weight: 199, quantity: 1 },
     ],
   },
@@ -54,6 +54,7 @@ export const categories: Category[] = [
     name: "Clothing (Packed)",
     items: [
       { item: "hat", name: "Deus cordura", description: "", classification: "base", weight: 68, quantity: 1 },
+      { item: "wind jacket", name: "Katabatic Crest", description: "", classification: "base", weight: 56.4, quantity: 1 },
       { item: "midlayer", name: "MYOG Alpha Direct 90 hoody", description: "", classification: "base", weight: 151.9, quantity: 1 },
       { item: "rain jacket", name: "Emergency poncho", description: "", classification: "base", weight: 36, quantity: 1 },
       { item: "puffy", name: "Enlightened Equipment Torrid", description: "", classification: "base", weight: 234.9, quantity: 1 },
@@ -94,7 +95,7 @@ export const categories: Category[] = [
   {
     name: "Clothing (Worn)",
     items: [
-      { item: "shirt", name: "Vuori Strato Tech tee", description: "", classification: "worn", weight: 121.4, quantity: 1 },
+      { item: "shirt", name: "OR Echo Sun Hoodie", description: "", classification: "worn", weight: 147, quantity: 1 },
       { item: "pants", name: "Vuori Meta", description: "", classification: "worn", weight: 447.7, quantity: 1 },
       { item: "underwear", name: "32 degrees synthetic", description: "", classification: "worn", weight: 77.3, quantity: 1 },
       { item: "socks", name: "Darn tough", description: "", classification: "worn", weight: 38.2, quantity: 2 },
