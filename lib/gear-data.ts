@@ -137,6 +137,11 @@ export const categories: Category[] = [
         weight: 6.5,
         quantity: 1,
       },
+    ],
+  },
+  {
+    name: 'Water',
+    items: [
       {
         item: 'filter',
         name: 'Sawyer Mini w/ bag',
@@ -153,17 +158,33 @@ export const categories: Category[] = [
         weight: 40,
         quantity: 2,
       },
+      {
+        item: 'water',
+        name: '1L',
+        description: '',
+        classification: 'consumable',
+        weight: 1000,
+        quantity: 1,
+      },
+      {
+        item: 'electrolytes',
+        name: 'Gatorade Zero packet',
+        description: '',
+        classification: 'consumable',
+        weight: 3.6,
+        quantity: 2,
+      },
     ],
   },
   {
     name: 'Clothing (Packed)',
     items: [
       {
-        item: 'hat',
-        name: 'Deus cordura',
+        item: 'midlayer',
+        name: 'MYOG AD90 hoody',
         description: '',
         classification: 'base',
-        weight: 68,
+        weight: 151.9,
         quantity: 1,
       },
       {
@@ -175,11 +196,11 @@ export const categories: Category[] = [
         quantity: 1,
       },
       {
-        item: 'midlayer',
-        name: 'MYOG AD90 hoody',
+        item: 'puffy',
+        name: 'Enlightened Equipment Torrid',
         description: '',
         classification: 'base',
-        weight: 151.9,
+        weight: 234.9,
         quantity: 1,
       },
       {
@@ -188,14 +209,6 @@ export const categories: Category[] = [
         description: '',
         classification: 'base',
         weight: 36,
-        quantity: 1,
-      },
-      {
-        item: 'puffy',
-        name: 'Enlightened Equipment Torrid',
-        description: '',
-        classification: 'base',
-        weight: 234.9,
         quantity: 1,
       },
     ],
@@ -355,6 +368,14 @@ export const categories: Category[] = [
     name: 'Clothing (Worn)',
     items: [
       {
+        item: 'hat',
+        name: 'Deus cordura',
+        description: '',
+        classification: 'worn',
+        weight: 68,
+        quantity: 1,
+      },
+      {
         item: 'shirt',
         name: 'OR Echo',
         description: '',
@@ -416,14 +437,6 @@ export const categories: Category[] = [
         quantity: 2,
       },
       {
-        item: 'water',
-        name: '1L',
-        description: '',
-        classification: 'consumable',
-        weight: 1000,
-        quantity: 1,
-      },
-      {
         item: 'caffeine',
         name: 'Caffeine pills',
         description: '',
@@ -470,14 +483,6 @@ export const categories: Category[] = [
         classification: 'consumable',
         weight: 28,
         quantity: 1,
-      },
-      {
-        item: 'electrolytes',
-        name: 'Gatorade Zero packet',
-        description: '',
-        classification: 'consumable',
-        weight: 3.6,
-        quantity: 2,
       },
     ],
   },
