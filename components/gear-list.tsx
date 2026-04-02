@@ -1,18 +1,18 @@
-"use client"
+'use client'
 
-import { Shirt, Droplet } from "lucide-react"
+import { Shirt, Droplet } from 'lucide-react'
 
-import { categories } from "@/lib/gear-data"
-import { useUnit } from "@/lib/unit-context"
+import { categories } from '@/lib/gear-data'
+import { useUnit } from '@/lib/unit-context'
 
 export function GearList() {
   const { formatWeight } = useUnit()
 
   const getClassificationIcon = (classification: string) => {
     switch (classification) {
-      case "worn":
+      case 'worn':
         return <Shirt className="h-3 w-3" strokeWidth={1.5} />
-      case "consumable":
+      case 'consumable':
         return <Droplet className="h-3 w-3" strokeWidth={1.5} />
       default:
         return null
@@ -21,14 +21,14 @@ export function GearList() {
 
   const getClassificationColor = (classification: string) => {
     switch (classification) {
-      case "base":
-        return "text-foreground"
-      case "worn":
-        return "text-blue-500"
-      case "consumable":
-        return "text-emerald-600"
+      case 'base':
+        return 'text-foreground'
+      case 'worn':
+        return 'text-blue-500'
+      case 'consumable':
+        return 'text-emerald-600'
       default:
-        return "text-muted-foreground"
+        return 'text-muted-foreground'
     }
   }
   return (
@@ -69,14 +69,14 @@ export function GearList() {
                   </span>
 
                   {/* Classification Icon - only show for worn/consumable */}
-                  {item.classification !== "base" && (
+                  {item.classification !== 'base' && (
                     <div
                       className={`flex h-4 w-4 shrink-0 items-center justify-center ${getClassificationColor(item.classification)}`}
                     >
                       {getClassificationIcon(item.classification)}
                     </div>
                   )}
-                  {item.classification === "base" && <div className="w-4 shrink-0" />}
+                  {item.classification === 'base' && <div className="w-4 shrink-0" />}
 
                   {/* Quantity */}
                   <span className="text-muted-foreground w-6 shrink-0 text-center font-mono text-xs">

@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import { Moon, Sun, Monitor } from "lucide-react"
-import { useTheme } from "next-themes"
+import { Moon, Sun, Monitor } from 'lucide-react'
+import { useTheme } from 'next-themes'
 
-import { THEME_COOKIE, type Theme } from "@/lib/cookies"
+import { THEME_COOKIE, type Theme } from '@/lib/cookies'
 
-const themes = ["light", "dark", "system"] as const
+const themes = ['light', 'dark', 'system'] as const
 
-export function ThemeToggle({ initialTheme = "system" }: { initialTheme?: Theme }) {
+export function ThemeToggle({ initialTheme = 'system' }: { initialTheme?: Theme }) {
   const { theme, setTheme, resolvedTheme } = useTheme()
 
   // Use theme from hook if available, otherwise use initialTheme from server
@@ -24,10 +24,10 @@ export function ThemeToggle({ initialTheme = "system" }: { initialTheme?: Theme 
 
   // Use resolvedTheme for the icon display (actual light/dark), but show Monitor for system
   const getIcon = () => {
-    if (currentTheme === "system") {
+    if (currentTheme === 'system') {
       return <Monitor className="h-4 w-4" strokeWidth={1.5} />
     }
-    if (resolvedTheme === "dark") {
+    if (resolvedTheme === 'dark') {
       return <Moon className="h-4 w-4" strokeWidth={1.5} />
     }
     return <Sun className="h-4 w-4" strokeWidth={1.5} />
