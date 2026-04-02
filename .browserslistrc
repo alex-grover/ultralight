@@ -1,5 +1,2 @@
-last 2 Chrome versions
-last 2 Firefox versions
-last 2 Safari versions
-last 2 Edge versions
-not dead
+# Target Baseline Widely Available browsers
+defaults and fully supports es6-module
