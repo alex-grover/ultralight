@@ -1,12 +1,13 @@
 "use client"
 
 import { ThemeProvider as NextThemesProvider } from "next-themes"
+
 import { THEME_COOKIE, type Theme } from "./cookies"
 
-export function ThemeProvider({ 
+export function ThemeProvider({
   children,
-  initialTheme = "system"
-}: { 
+  initialTheme = "system",
+}: {
   children: React.ReactNode
   initialTheme?: Theme
 }) {

@@ -2,18 +2,19 @@
 
 import { Moon, Sun, Monitor } from "lucide-react"
 import { useTheme } from "next-themes"
+
 import { THEME_COOKIE, type Theme } from "@/lib/cookies"
 
 const themes = ["light", "dark", "system"] as const
 
 export function ThemeToggle({ initialTheme = "system" }: { initialTheme?: Theme }) {
   const { theme, setTheme, resolvedTheme } = useTheme()
-  
+
   // Use theme from hook if available, otherwise use initialTheme from server
   const currentTheme = theme ?? initialTheme
 
   const cycleTheme = () => {
-    const currentIndex = themes.indexOf(currentTheme as typeof themes[number])
+    const currentIndex = themes.indexOf(currentTheme as (typeof themes)[number])
     const nextIndex = (currentIndex + 1) % themes.length
     const newTheme = themes[nextIndex]
     setTheme(newTheme)
@@ -24,19 +25,19 @@ export function ThemeToggle({ initialTheme = "system" }: { initialTheme?: Theme 
   // Use resolvedTheme for the icon display (actual light/dark), but show Monitor for system
   const getIcon = () => {
     if (currentTheme === "system") {
-      return <Monitor className="w-4 h-4" strokeWidth={1.5} />
+      return <Monitor className="h-4 w-4" strokeWidth={1.5} />
     }
     if (resolvedTheme === "dark") {
-      return <Moon className="w-4 h-4" strokeWidth={1.5} />
+      return <Moon className="h-4 w-4" strokeWidth={1.5} />
     }
-    return <Sun className="w-4 h-4" strokeWidth={1.5} />
+    return <Sun className="h-4 w-4" strokeWidth={1.5} />
   }
 
   return (
     <button
       type="button"
       onClick={cycleTheme}
-      className="w-8 h-8 flex items-center justify-center text-foreground hover:text-muted-foreground transition-colors"
+      className="text-foreground hover:text-muted-foreground flex h-8 w-8 items-center justify-center transition-colors"
       aria-label={`Current theme: ${currentTheme}. Click to cycle.`}
       suppressHydrationWarning
     >

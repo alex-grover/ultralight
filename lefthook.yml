@@ -1,0 +1,10 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: lint
+      glob: "*.{js,jsx,ts,tsx}"
+      run: pnpm oxlint {staged_files}
+
+    - name: format check
+      glob: "*.{js,jsx,ts,tsx,json,css,md}"
+      run: pnpm oxfmt --check {staged_files}

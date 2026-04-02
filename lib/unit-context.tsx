@@ -1,6 +1,7 @@
 "use client"
 
 import { createContext, useContext, useState, type ReactNode } from "react"
+
 import { UNIT_COOKIE, type WeightUnit } from "./cookies"
 
 export type { WeightUnit }
@@ -13,10 +14,10 @@ type UnitContextType = {
 
 const UnitContext = createContext<UnitContextType | null>(null)
 
-export function UnitProvider({ 
+export function UnitProvider({
   children,
-  initialUnit = "g"
-}: { 
+  initialUnit = "g",
+}: {
   children: ReactNode
   initialUnit?: WeightUnit
 }) {
@@ -43,9 +44,7 @@ export function UnitProvider({
   }
 
   return (
-    <UnitContext.Provider value={{ unit, setUnit, formatWeight }}>
-      {children}
-    </UnitContext.Provider>
+    <UnitContext.Provider value={{ unit, setUnit, formatWeight }}>{children}</UnitContext.Provider>
   )
 }
 
