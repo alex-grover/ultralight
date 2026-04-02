@@ -1,7 +1,7 @@
-import type { Theme } from "@/lib/cookies"
+import type { Theme } from '@/lib/cookies'
 
-import { ThemeToggle } from "./theme-toggle"
-import { UnitSelector } from "./unit-selector"
+import { ThemeToggle } from './theme-toggle'
+import { UnitSelector } from './unit-selector'
 
 export function Header({ initialTheme }: { initialTheme?: Theme }) {
   return (

@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import type { WeightUnit } from "@/lib/cookies"
-import { useUnit } from "@/lib/unit-context"
+import type { WeightUnit } from '@/lib/cookies'
+import { useUnit } from '@/lib/unit-context'
 
-const units: WeightUnit[] = ["g", "oz", "lb"]
+const units: WeightUnit[] = ['g', 'oz', 'lb']
 
 export function UnitSelector() {
   const { unit, setUnit } = useUnit()
@@ -16,7 +16,7 @@ export function UnitSelector() {
           <button
             onClick={() => setUnit(u)}
             className={`transition-colors ${
-              unit === u ? "text-foreground" : "text-muted-foreground hover:text-foreground/70"
+              unit === u ? 'text-foreground' : 'text-muted-foreground hover:text-foreground/70'
             }`}
           >
             {u}

@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { createContext, useContext, useState, type ReactNode } from "react"
+import { createContext, useContext, useState, type ReactNode } from 'react'
 
-import { UNIT_COOKIE, type WeightUnit } from "./cookies"
+import { UNIT_COOKIE, type WeightUnit } from './cookies'
 
 export type { WeightUnit }
 
@@ -16,7 +16,7 @@ const UnitContext = createContext<UnitContextType | null>(null)
 
 export function UnitProvider({
   children,
-  initialUnit = "g",
+  initialUnit = 'g',
 }: {
   children: ReactNode
   initialUnit?: WeightUnit
@@ -34,9 +34,9 @@ export function UnitProvider({
     const rounded = Math.round(grams * 10) / 10
 
     switch (unit) {
-      case "oz":
+      case 'oz':
         return `${(rounded / 28.3495).toFixed(2)} oz`
-      case "lb":
+      case 'lb':
         return `${(rounded / 453.592).toFixed(2)} lb`
       default:
         return `${rounded} g`
@@ -51,7 +51,7 @@ export function UnitProvider({
 export function useUnit() {
   const context = useContext(UnitContext)
   if (!context) {
-    throw new Error("useUnit must be used within a UnitProvider")
+    throw new Error('useUnit must be used within a UnitProvider')
   }
   return context
 }

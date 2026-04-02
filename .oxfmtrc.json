@@ -4,13 +4,16 @@
   "tabWidth": 2,
   "useTabs": false,
   "semi": false,
-  "singleQuote": false,
+  "singleQuote": true,
   "trailingComma": "es5",
   "sortImports": {
     "enabled": true
   },
   "sortTailwindcss": {
     "enabled": true
+  },
+  "sortPackageJson": {
+    "sortScripts": true
   },
   "ignorePatterns": [".next/**", "node_modules/**"]
 }

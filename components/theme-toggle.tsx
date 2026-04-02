@@ -1,17 +1,24 @@
-"use client"
+'use client'
 
-import { Moon, Sun, Monitor } from "lucide-react"
-import { useTheme } from "next-themes"
+import { Moon, Sun, Monitor } from 'lucide-react'
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
-import { THEME_COOKIE, type Theme } from "@/lib/cookies"
+import { THEME_COOKIE, type Theme } from '@/lib/cookies'
 
-const themes = ["light", "dark", "system"] as const
+const themes = ['light', 'dark', 'system'] as const
 
-export function ThemeToggle({ initialTheme = "system" }: { initialTheme?: Theme }) {
+export function ThemeToggle({ initialTheme = 'system' }: { initialTheme?: Theme }) {
+  const [mounted, setMounted] = useState(false)
   const { theme, setTheme, resolvedTheme } = useTheme()
 
-  // Use theme from hook if available, otherwise use initialTheme from server
-  const currentTheme = theme ?? initialTheme
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Before mount: use initialTheme from server to match SSR
+  // After mount: use theme from next-themes
+  const currentTheme = mounted ? (theme ?? initialTheme) : initialTheme
 
   const cycleTheme = () => {
     const currentIndex = themes.indexOf(currentTheme as (typeof themes)[number])
@@ -22,12 +29,17 @@ export function ThemeToggle({ initialTheme = "system" }: { initialTheme?: Theme 
     document.cookie = `${THEME_COOKIE}=${newTheme}; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Lax`
   }
 
-  // Use resolvedTheme for the icon display (actual light/dark), but show Monitor for system
+  // Determine which icon to show
   const getIcon = () => {
-    if (currentTheme === "system") {
+    // Before mount: use initialTheme directly to match server render exactly
+    // After mount: use resolvedTheme for actual light/dark
+    if (currentTheme === 'system') {
       return <Monitor className="h-4 w-4" strokeWidth={1.5} />
     }
-    if (resolvedTheme === "dark") {
+
+    const isDark = mounted ? resolvedTheme === 'dark' : initialTheme === 'dark'
+
+    if (isDark) {
       return <Moon className="h-4 w-4" strokeWidth={1.5} />
     }
     return <Sun className="h-4 w-4" strokeWidth={1.5} />
@@ -39,7 +51,6 @@ export function ThemeToggle({ initialTheme = "system" }: { initialTheme?: Theme 
       onClick={cycleTheme}
       className="text-foreground hover:text-muted-foreground flex h-8 w-8 items-center justify-center transition-colors"
       aria-label={`Current theme: ${currentTheme}. Click to cycle.`}
-      suppressHydrationWarning
     >
       {getIcon()}
     </button>

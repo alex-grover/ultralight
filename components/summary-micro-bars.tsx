@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 
-import { categories, computeSummary, computeCategoryBreakdown } from "@/lib/gear-data"
-import { useUnit } from "@/lib/unit-context"
+import { categories, computeSummary, computeCategoryBreakdown } from '@/lib/gear-data'
+import { useUnit } from '@/lib/unit-context'
 
 export function SummaryMicroBars() {
   const { formatWeight } = useUnit()
