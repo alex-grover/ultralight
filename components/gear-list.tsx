@@ -2,11 +2,9 @@
 
 import { Shirt, Droplet } from "lucide-react"
 import { categories } from "@/lib/gear-data"
-import { useUnit } from "@/lib/unit-context"
+import { WeightValue } from "./weight-value"
 
 export function GearList() {
-  const { formatWeight } = useUnit()
-  
   const getClassificationIcon = (classification: string) => {
     switch (classification) {
       case "worn":
@@ -17,7 +15,7 @@ export function GearList() {
         return null
     }
   }
-  
+
   const getClassificationColor = (classification: string) => {
     switch (classification) {
       case "base":
@@ -30,11 +28,15 @@ export function GearList() {
         return "text-muted-foreground"
     }
   }
+
   return (
     <div className="space-y-8">
       {categories.map((category) => {
-        const categoryWeight = category.items.reduce((sum, item) => sum + item.weight * item.quantity, 0)
-        
+        const categoryWeight = category.items.reduce(
+          (sum, item) => sum + item.weight * item.quantity,
+          0
+        )
+
         return (
           <section key={category.name}>
             {/* Category header */}
@@ -42,11 +44,12 @@ export function GearList() {
               <h2 className="text-xs font-mono uppercase tracking-[0.15em] text-foreground">
                 {category.name}
               </h2>
-              <span className="text-xs font-mono tabular-nums text-muted-foreground">
-                {formatWeight(categoryWeight)}
-              </span>
+              <WeightValue
+                grams={categoryWeight}
+                className="text-xs font-mono tabular-nums text-muted-foreground"
+              />
             </div>
-            
+
             {/* Items */}
             <div className="space-y-2">
               {category.items.map((item, index) => (
@@ -58,29 +61,32 @@ export function GearList() {
                   <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground w-20 shrink-0">
                     {item.item}
                   </span>
-                  
+
                   {/* Name */}
                   <span className="text-sm text-foreground flex-1 min-w-0 truncate">
                     {item.name}
                   </span>
-                  
+
                   {/* Classification Icon - only show for worn/consumable */}
                   {item.classification !== "base" && (
-                    <div className={`w-4 h-4 shrink-0 flex items-center justify-center ${getClassificationColor(item.classification)}`}>
+                    <div
+                      className={`w-4 h-4 shrink-0 flex items-center justify-center ${getClassificationColor(item.classification)}`}
+                    >
                       {getClassificationIcon(item.classification)}
                     </div>
                   )}
                   {item.classification === "base" && <div className="w-4 shrink-0" />}
-                  
+
                   {/* Quantity */}
                   <span className="text-xs font-mono text-muted-foreground w-6 text-center shrink-0">
                     {item.quantity}
                   </span>
-                  
+
                   {/* Weight */}
-                  <span className="text-xs font-mono tabular-nums text-foreground w-16 text-right shrink-0">
-                    {formatWeight(item.weight * item.quantity)}
-                  </span>
+                  <WeightValue
+                    grams={item.weight * item.quantity}
+                    className="text-xs font-mono tabular-nums text-foreground w-16 text-right shrink-0"
+                  />
                 </div>
               ))}
             </div>

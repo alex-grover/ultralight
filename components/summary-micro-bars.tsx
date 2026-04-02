@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { categories, computeSummary, computeCategoryBreakdown } from "@/lib/gear-data"
 import { useUnit } from "@/lib/unit-context"
+import { WeightValue } from "./weight-value"
 
 export function SummaryMicroBars() {
   const { formatWeight } = useUnit()
@@ -82,9 +83,7 @@ export function SummaryMicroBars() {
               </span>
 
               {/* Weight */}
-              <span className="text-xs font-mono tabular-nums text-foreground text-right">
-                {formatWeight(category.total)}
-              </span>
+              <WeightValue grams={category.total} className="text-xs font-mono tabular-nums text-foreground text-right" />
             </div>
           )
         })}
@@ -97,33 +96,25 @@ export function SummaryMicroBars() {
             <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-foreground">
               Base Weight
             </span>
-            <span className="text-xs md:text-sm font-mono tabular-nums text-foreground shrink-0">
-              {formatWeight(summary.baseWeight)}
-            </span>
+            <WeightValue grams={summary.baseWeight} className="text-xs md:text-sm font-mono tabular-nums text-foreground shrink-0" />
           </div>
           <div className="flex justify-between items-baseline gap-2">
             <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-emerald-600">
               Consumables
             </span>
-            <span className="text-xs md:text-sm font-mono tabular-nums text-emerald-600 shrink-0">
-              {formatWeight(summary.consumables)}
-            </span>
+            <WeightValue grams={summary.consumables} className="text-xs md:text-sm font-mono tabular-nums text-emerald-600 shrink-0" />
           </div>
           <div className="flex justify-between items-baseline gap-2">
             <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-blue-500">
               Worn
             </span>
-            <span className="text-xs md:text-sm font-mono tabular-nums text-blue-500 shrink-0">
-              {formatWeight(summary.worn)}
-            </span>
+            <WeightValue grams={summary.worn} className="text-xs md:text-sm font-mono tabular-nums text-blue-500 shrink-0" />
           </div>
           <div className="flex justify-between items-baseline gap-2">
             <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-foreground">
               Total
             </span>
-            <span className="text-xs md:text-sm font-mono tabular-nums font-semibold text-foreground shrink-0">
-              {formatWeight(summary.total)}
-            </span>
+            <WeightValue grams={summary.total} className="text-xs md:text-sm font-mono tabular-nums font-semibold text-foreground shrink-0" />
           </div>
         </div>
       </div>
