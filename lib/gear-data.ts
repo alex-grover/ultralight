@@ -104,7 +104,7 @@ export const categories: Category[] = [
     items: [
       {
         item: 'midlayer',
-        name: 'MYOG AD90 hoody',
+        name: 'MYOG AD90',
         classification: 'base',
         weight: 151.9,
         quantity: 1,
@@ -118,7 +118,7 @@ export const categories: Category[] = [
       },
       {
         item: 'puffy',
-        name: 'Enlightened Equipment Torrid',
+        name: 'EE Torrid',
         classification: 'base',
         weight: 234.9,
         quantity: 1,
@@ -165,7 +165,7 @@ export const categories: Category[] = [
       },
       {
         item: 'socks',
-        name: 'Darn tough',
+        name: 'Darn Tough',
         classification: 'worn',
         weight: 38.2,
         quantity: 2,
