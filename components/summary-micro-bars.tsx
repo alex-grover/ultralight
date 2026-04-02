@@ -119,10 +119,10 @@ export function SummaryMicroBars() {
           </div>
           <div className="flex justify-between items-baseline gap-2">
             <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-foreground">
-              Total
+              Pack Weight
             </span>
             <span className="text-xs md:text-sm font-mono tabular-nums font-semibold text-foreground shrink-0">
-              {formatWeight(summary.total)}
+              {formatWeight(summary.baseWeight + summary.consumables)}
             </span>
           </div>
         </div>

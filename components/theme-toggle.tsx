@@ -38,6 +38,7 @@ export function ThemeToggle({ initialTheme = "system" }: { initialTheme?: Theme 
       onClick={cycleTheme}
       className="w-8 h-8 flex items-center justify-center text-foreground hover:text-muted-foreground transition-colors"
       aria-label={`Current theme: ${currentTheme}. Click to cycle.`}
+      suppressHydrationWarning
     >
       {getIcon()}
     </button>
