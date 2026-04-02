@@ -137,9 +137,9 @@ export const categories: Category[] = [
     items: [
       {
         item: 'hat',
-        name: 'Deus cordura',
+        name: 'Bandit',
         classification: 'worn',
-        weight: 68,
+        weight: 46.9,
         quantity: 1,
       },
       {
