@@ -54,7 +54,7 @@ export function SummaryMicroBars() {
 
                 {/* Worn segment - subtle blue */}
                 <div
-                  className="absolute inset-y-0 bg-blue-500/60"
+                  className="absolute inset-y-0 bg-blue-500/60 dark:bg-blue-400/60"
                   style={{
                     left: `${basePercent}%`,
                     width: `${wornPercent}%`,
@@ -63,7 +63,7 @@ export function SummaryMicroBars() {
 
                 {/* Consumable segment - subtle green */}
                 <div
-                  className="absolute inset-y-0 bg-emerald-600/60"
+                  className="absolute inset-y-0 bg-emerald-600/60 dark:bg-emerald-400/60"
                   style={{
                     left: `${basePercent + wornPercent}%`,
                     width: `${consumablePercent}%`,
@@ -108,18 +108,18 @@ export function SummaryMicroBars() {
             </span>
           </div>
           <div className="flex items-baseline justify-between gap-2">
-            <span className="font-mono text-[10px] tracking-widest text-emerald-600 uppercase md:text-xs">
+            <span className="font-mono text-[10px] tracking-widest text-emerald-600 uppercase md:text-xs dark:text-emerald-400">
               Consumables
             </span>
-            <span className="shrink-0 font-mono text-xs text-emerald-600 tabular-nums md:text-sm">
+            <span className="shrink-0 font-mono text-xs text-emerald-600 tabular-nums md:text-sm dark:text-emerald-400">
               {formatWeight(summary.consumables)}
             </span>
           </div>
           <div className="flex items-baseline justify-between gap-2">
-            <span className="font-mono text-[10px] tracking-widest text-blue-500 uppercase md:text-xs">
+            <span className="font-mono text-[10px] tracking-widest text-blue-500 uppercase md:text-xs dark:text-blue-400">
               Worn
             </span>
-            <span className="shrink-0 font-mono text-xs text-blue-500 tabular-nums md:text-sm">
+            <span className="shrink-0 font-mono text-xs text-blue-500 tabular-nums md:text-sm dark:text-blue-400">
               {formatWeight(summary.worn)}
             </span>
           </div>
