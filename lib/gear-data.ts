@@ -427,7 +427,7 @@ export const categories: Category[] = [
         quantity: 2,
       },
     ],
-  }
+  },
 ]
 
 export function computeSummary(cats: Category[]) {
