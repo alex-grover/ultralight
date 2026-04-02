@@ -7,8 +7,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Pack Weight',
-  description: 'My backpacking gear list',
+  title: 'Ultralight',
+  description: "Don't pack your fears",
   generator: 'v0.app',
   icons: {
     icon: [
