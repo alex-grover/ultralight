@@ -13,7 +13,7 @@ type UnitContextType = {
 const UnitContext = createContext<UnitContextType | null>(null)
 
 export function UnitProvider({ children }: { children: ReactNode }) {
-  const [unit, setUnitState] = useState<WeightUnit>(() => localStorage.getItem('weight-unit') as WeightUnit | null || "g")
+  const [unit, setUnitState] = useState<WeightUnit>("g")
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
