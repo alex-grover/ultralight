@@ -110,35 +110,7 @@ export const categories: Category[] = [
       },
     ],
   },
-  {
-    name: 'Cooking',
-    items: [
-      {
-        item: 'food bag',
-        name: 'MYOG',
-        description: '',
-        classification: 'base',
-        weight: 9.7,
-        quantity: 1,
-      },
-      {
-        item: 'jar',
-        name: '20oz',
-        description: '',
-        classification: 'base',
-        weight: 69.3,
-        quantity: 1,
-      },
-      {
-        item: 'spoon',
-        name: 'Plastic',
-        description: '',
-        classification: 'base',
-        weight: 6.5,
-        quantity: 1,
-      },
-    ],
-  },
+
   {
     name: 'Water',
     items: [
@@ -428,6 +400,30 @@ export const categories: Category[] = [
   {
     name: 'Food',
     items: [
+      {
+        item: 'food bag',
+        name: 'MYOG',
+        description: '',
+        classification: 'base',
+        weight: 9.7,
+        quantity: 1,
+      },
+      {
+        item: 'jar',
+        name: '20oz',
+        description: '',
+        classification: 'base',
+        weight: 69.3,
+        quantity: 1,
+      },
+      {
+        item: 'spoon',
+        name: 'Plastic',
+        description: '',
+        classification: 'base',
+        weight: 6.5,
+        quantity: 1,
+      },
       {
         item: 'lunch',
         name: 'Beans, rice, Fritos, sauce',
