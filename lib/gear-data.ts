@@ -3,7 +3,6 @@ export type Classification = 'base' | 'worn' | 'consumable'
 export type Item = {
   item: string
   name: string
-  description: string
   classification: Classification
   weight: number // in grams
   quantity: number
@@ -21,7 +20,6 @@ export const categories: Category[] = [
       {
         item: 'backpack',
         name: 'MYOG 25L Prickly Gorse',
-        description: '',
         classification: 'base',
         weight: 316.4,
         quantity: 1,
@@ -29,7 +27,6 @@ export const categories: Category[] = [
       {
         item: 'liner',
         name: 'Nylofume',
-        description: 'cut down',
         classification: 'base',
         weight: 21.4,
         quantity: 1,
@@ -42,7 +39,6 @@ export const categories: Category[] = [
       {
         item: 'tarp',
         name: 'MYOG 6x9 silpoly',
-        description: '',
         classification: 'base',
         weight: 219.4,
         quantity: 1,
@@ -50,7 +46,6 @@ export const categories: Category[] = [
       {
         item: 'bivy',
         name: 'MYOG',
-        description: '',
         classification: 'base',
         weight: 153.9,
         quantity: 1,
@@ -58,7 +53,6 @@ export const categories: Category[] = [
       {
         item: 'poles',
         name: '3FUL C1 (pair)',
-        description: '',
         classification: 'worn',
         weight: 364.4,
         quantity: 1,
@@ -66,7 +60,6 @@ export const categories: Category[] = [
       {
         item: 'guylines',
         name: '8 w/ tensioners',
-        description: '',
         classification: 'base',
         weight: 58,
         quantity: 1,
@@ -74,7 +67,6 @@ export const categories: Category[] = [
       {
         item: 'stakes',
         name: 'Carbon fiber',
-        description: '',
         classification: 'base',
         weight: 2,
         quantity: 6,
@@ -87,25 +79,22 @@ export const categories: Category[] = [
       {
         item: 'quilt',
         name: 'MYOG 3.6 Apex (45F)',
-        description: '',
         classification: 'base',
         weight: 464.8,
         quantity: 1,
       },
       {
-        item: 'pillow',
-        name: 'Exped Ultra',
-        description: '',
+        item: 'pad',
+        name: 'CCF, 6 panels',
         classification: 'base',
-        weight: 51,
+        weight: 199,
         quantity: 1,
       },
       {
-        item: 'pad',
-        name: 'CCF, 6 panels',
-        description: '',
+        item: 'pillow',
+        name: 'Exped Ultra',
         classification: 'base',
-        weight: 199,
+        weight: 51,
         quantity: 1,
       },
     ],
@@ -115,8 +104,7 @@ export const categories: Category[] = [
     items: [
       {
         item: 'midlayer',
-        name: 'MYOG AD90 hoody',
-        description: '',
+        name: 'MYOG AD90',
         classification: 'base',
         weight: 151.9,
         quantity: 1,
@@ -124,15 +112,13 @@ export const categories: Category[] = [
       {
         item: 'wind jacket',
         name: 'Katabatic Crest',
-        description: '',
         classification: 'base',
         weight: 56.4,
         quantity: 1,
       },
       {
         item: 'puffy',
-        name: 'Enlightened Equipment Torrid',
-        description: '',
+        name: 'EE Torrid',
         classification: 'base',
         weight: 234.9,
         quantity: 1,
@@ -140,7 +126,6 @@ export const categories: Category[] = [
       {
         item: 'rain jacket',
         name: 'Emergency poncho',
-        description: '',
         classification: 'base',
         weight: 36,
         quantity: 1,
@@ -153,7 +138,6 @@ export const categories: Category[] = [
       {
         item: 'hat',
         name: 'Deus cordura',
-        description: '',
         classification: 'worn',
         weight: 68,
         quantity: 1,
@@ -161,7 +145,6 @@ export const categories: Category[] = [
       {
         item: 'shirt',
         name: 'OR Echo',
-        description: '',
         classification: 'worn',
         weight: 147,
         quantity: 1,
@@ -169,7 +152,6 @@ export const categories: Category[] = [
       {
         item: 'pants',
         name: 'Vuori Meta',
-        description: '',
         classification: 'worn',
         weight: 447.7,
         quantity: 1,
@@ -177,15 +159,13 @@ export const categories: Category[] = [
       {
         item: 'underwear',
         name: 'Lululemon',
-        description: '',
         classification: 'worn',
         weight: 64.6,
         quantity: 1,
       },
       {
         item: 'socks',
-        name: 'Darn tough',
-        description: '',
+        name: 'Darn Tough',
         classification: 'worn',
         weight: 38.2,
         quantity: 2,
@@ -193,7 +173,6 @@ export const categories: Category[] = [
       {
         item: 'shoes',
         name: 'Hoka Speedgoat',
-        description: '',
         classification: 'worn',
         weight: 598.2,
         quantity: 1,
@@ -201,7 +180,6 @@ export const categories: Category[] = [
       {
         item: 'watch',
         name: 'Automatic',
-        description: '',
         classification: 'worn',
         weight: 125,
         quantity: 1,
@@ -214,15 +192,13 @@ export const categories: Category[] = [
       {
         item: 'phone',
         name: 'iPhone 15 Pro w/ case',
-        description: '',
         classification: 'base',
         weight: 226,
         quantity: 1,
       },
       {
         item: 'cable',
-        name: 'Apple C-C w/ velcro tie',
-        description: '',
+        name: 'Apple',
         classification: 'base',
         weight: 19,
         quantity: 1,
@@ -230,7 +206,6 @@ export const categories: Category[] = [
       {
         item: 'battery',
         name: 'Nitecore NB10000 gen 1',
-        description: '',
         classification: 'base',
         weight: 151.2,
         quantity: 1,
@@ -238,7 +213,6 @@ export const categories: Category[] = [
       {
         item: 'flashlight',
         name: 'RovyVon A5',
-        description: '',
         classification: 'base',
         weight: 22,
         quantity: 1,
@@ -251,7 +225,6 @@ export const categories: Category[] = [
       {
         item: 'trowel',
         name: 'Bogler',
-        description: '',
         classification: 'base',
         weight: 13.5,
         quantity: 1,
@@ -259,7 +232,6 @@ export const categories: Category[] = [
       {
         item: 'tp',
         name: '1/2 roll + 2 ziplock bags',
-        description: '',
         classification: 'base',
         weight: 48.1,
         quantity: 1,
@@ -267,7 +239,6 @@ export const categories: Category[] = [
       {
         item: 'soap',
         name: 'Bronners',
-        description: '',
         classification: 'consumable',
         weight: 11.1,
         quantity: 1,
@@ -275,7 +246,6 @@ export const categories: Category[] = [
       {
         item: 'toothbrush',
         name: 'Bamboo',
-        description: '',
         classification: 'base',
         weight: 6.3,
         quantity: 1,
@@ -283,7 +253,6 @@ export const categories: Category[] = [
       {
         item: 'toothpaste',
         name: 'Travel size',
-        description: '',
         classification: 'consumable',
         weight: 7.7,
         quantity: 1,
@@ -291,7 +260,6 @@ export const categories: Category[] = [
       {
         item: 'sunscreen',
         name: 'SPF 50',
-        description: '',
         classification: 'consumable',
         weight: 30,
         quantity: 1,
@@ -299,7 +267,6 @@ export const categories: Category[] = [
       {
         item: 'chapstick',
         name: 'SPF 15',
-        description: '',
         classification: 'base',
         weight: 8.2,
         quantity: 1,
@@ -307,7 +274,6 @@ export const categories: Category[] = [
       {
         item: 'bottles',
         name: '1oz flip top',
-        description: '',
         classification: 'base',
         weight: 8,
         quantity: 3,
@@ -320,7 +286,6 @@ export const categories: Category[] = [
       {
         item: 'first aid kit',
         name: 'Ibuprofen, cetirizine, band aids',
-        description: '',
         classification: 'base',
         weight: 16.2,
         quantity: 1,
@@ -328,7 +293,6 @@ export const categories: Category[] = [
       {
         item: 'blister kit',
         name: 'Athletic tape, scissors, pin',
-        description: '',
         classification: 'base',
         weight: 10.5,
         quantity: 1,
@@ -336,7 +300,6 @@ export const categories: Category[] = [
       {
         item: 'lighter',
         name: 'Mini bic',
-        description: '',
         classification: 'base',
         weight: 11.4,
         quantity: 1,
@@ -344,7 +307,6 @@ export const categories: Category[] = [
       {
         item: 'storage',
         name: 'Gallon ziplock',
-        description: '',
         classification: 'base',
         weight: 8.5,
         quantity: 1,
@@ -352,7 +314,6 @@ export const categories: Category[] = [
       {
         item: 'cards',
         name: 'ID, credit card, cash',
-        description: '',
         classification: 'base',
         weight: 12,
         quantity: 1,
@@ -365,7 +326,6 @@ export const categories: Category[] = [
       {
         item: 'food bag',
         name: 'MYOG',
-        description: '',
         classification: 'base',
         weight: 9.7,
         quantity: 1,
@@ -373,7 +333,6 @@ export const categories: Category[] = [
       {
         item: 'jar',
         name: '20oz',
-        description: '',
         classification: 'base',
         weight: 69.3,
         quantity: 1,
@@ -381,15 +340,13 @@ export const categories: Category[] = [
       {
         item: 'spoon',
         name: 'Plastic',
-        description: '',
         classification: 'base',
         weight: 6.5,
         quantity: 1,
       },
       {
         item: 'lunch',
-        name: 'Beans, rice, Fritos, sauce',
-        description: '600 cals',
+        name: 'Beans, rice, Fritos, sauce (600 cals)',
         classification: 'consumable',
         weight: 165,
         quantity: 2,
@@ -397,7 +354,6 @@ export const categories: Category[] = [
       {
         item: 'caffeine',
         name: 'Caffeine pills',
-        description: '',
         classification: 'consumable',
         weight: 0.6,
         quantity: 12,
@@ -405,31 +361,27 @@ export const categories: Category[] = [
       {
         item: 'pill bag',
         name: 'Pill bag',
-        description: '',
         classification: 'base',
         weight: 0.7,
         quantity: 1,
       },
       {
         item: 'bars',
-        name: 'Clif builders',
-        description: '280 cals',
+        name: 'Clif builders (280 cals)',
         classification: 'consumable',
         weight: 68,
         quantity: 1,
       },
       {
         item: 'oatmeal',
-        name: 'Oatmeal packets',
-        description: '150 cals each',
+        name: 'Oatmeal packets (150 cals each)',
         classification: 'consumable',
         weight: 43,
         quantity: 2,
       },
       {
         item: 'dinner',
-        name: 'Ramen + instant potatoes',
-        description: '535 cals',
+        name: 'Ramen + instant potatoes (535 cals)',
         classification: 'consumable',
         weight: 155,
         quantity: 1,
@@ -437,7 +389,6 @@ export const categories: Category[] = [
       {
         item: 'hot sauce',
         name: 'Taco Bell diablo',
-        description: '',
         classification: 'consumable',
         weight: 28,
         quantity: 1,
@@ -450,7 +401,6 @@ export const categories: Category[] = [
       {
         item: 'filter',
         name: 'Sawyer Mini w/ bag',
-        description: '',
         classification: 'base',
         weight: 59.3,
         quantity: 1,
@@ -458,7 +408,6 @@ export const categories: Category[] = [
       {
         item: 'bottle',
         name: 'Smartwater 1L',
-        description: '',
         classification: 'base',
         weight: 40,
         quantity: 2,
@@ -466,7 +415,6 @@ export const categories: Category[] = [
       {
         item: 'water',
         name: '1L',
-        description: '',
         classification: 'consumable',
         weight: 1000,
         quantity: 1,
@@ -474,13 +422,12 @@ export const categories: Category[] = [
       {
         item: 'electrolytes',
         name: 'Gatorade Zero packet',
-        description: '',
         classification: 'consumable',
         weight: 3.6,
         quantity: 2,
       },
     ],
-  }
+  },
 ]
 
 export function computeSummary(cats: Category[]) {
