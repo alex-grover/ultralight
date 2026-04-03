@@ -8,12 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: pnpm/action-setup@v5
-      - uses: actions/setup-node@v6
-        with:
-          node-version: 24
-          cache: pnpm
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm lint
-      - run: pnpm fmt:check
-      - run: pnpm typecheck
+      - uses: oven-sh/setup-bun@v2
+      - run: bun ci
+      - run: bun lint
+      - run: bun fmt:check
+      - run: bun typecheck
