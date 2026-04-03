@@ -1,9 +1,6 @@
-import type { Theme } from '@/lib/cookies'
-
-import { ThemeToggle } from './theme-toggle'
 import { UnitSelector } from './unit-selector'
 
-export function Header({ initialTheme }: { initialTheme?: Theme }) {
+export function Header() {
   return (
     <header className="border-border border-b">
       <div className="px-4 py-6 md:px-6 md:py-8">
@@ -17,11 +14,7 @@ export function Header({ initialTheme }: { initialTheme?: Theme }) {
             <div className="bg-foreground mt-1 h-px w-16" />
           </div>
 
-          {/* Controls - unit selector and theme toggle */}
-          <div className="flex items-center gap-4">
-            <UnitSelector />
-            <ThemeToggle initialTheme={initialTheme} />
-          </div>
+          <UnitSelector />
         </div>
       </div>
     </header>

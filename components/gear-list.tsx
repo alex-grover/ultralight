@@ -24,9 +24,9 @@ export function GearList() {
       case 'base':
         return 'text-foreground'
       case 'worn':
-        return 'text-blue-500 dark:text-blue-400'
+        return 'text-worn'
       case 'consumable':
-        return 'text-emerald-600 dark:text-emerald-400'
+        return 'text-consumable'
       default:
         return 'text-muted-foreground'
     }
