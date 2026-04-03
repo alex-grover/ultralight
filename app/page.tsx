@@ -6,8 +6,6 @@ import { SummaryMicroBars } from '@/components/summary-micro-bars'
 import { UNIT_COOKIE, isValidUnit } from '@/lib/cookies'
 import { UnitProvider } from '@/lib/unit-context'
 
-export const runtime = 'edge'
-
 export default async function Home() {
   const cookieStore = await cookies()
 
