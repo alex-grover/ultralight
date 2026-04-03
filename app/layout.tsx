@@ -12,19 +12,11 @@ export const metadata: Metadata = {
   description: "Don't pack your fears.",
   generator: 'v0.app',
   metadataBase: new URL('https://ultralight.alexgrover.me'),
-  keywords: [
-    'ultralight',
-    'backpacking',
-    'hiking',
-    'gear list',
-    'pack weight',
-    'lighterpack',
-  ],
+  keywords: ['ultralight', 'backpacking', 'hiking', 'gear list', 'pack weight', 'lighterpack'],
   authors: [{ name: 'Alex Grover' }],
   openGraph: {
     title: 'Ultralight',
-    description:
-      "Don't pack your fears. A minimalist gear list app for ultralight backpackers.",
+    description: "Don't pack your fears. A minimalist gear list app for ultralight backpackers.",
     siteName: 'Ultralight',
     locale: 'en_US',
     type: 'website',
@@ -32,8 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Ultralight',
-    description:
-      "Don't pack your fears. A minimalist gear list app for ultralight backpackers.",
+    description: "Don't pack your fears. A minimalist gear list app for ultralight backpackers.",
   },
   icons: {
     icon: [
