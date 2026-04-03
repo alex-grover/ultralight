@@ -54,7 +54,7 @@ export function SummaryMicroBars() {
 
                 {/* Worn segment - subtle blue */}
                 <div
-                  className="absolute inset-y-0 bg-worn-bar"
+                  className="bg-worn-bar absolute inset-y-0"
                   style={{
                     left: `${basePercent}%`,
                     width: `${wornPercent}%`,
@@ -63,7 +63,7 @@ export function SummaryMicroBars() {
 
                 {/* Consumable segment - subtle green */}
                 <div
-                  className="absolute inset-y-0 bg-consumable-bar"
+                  className="bg-consumable-bar absolute inset-y-0"
                   style={{
                     left: `${basePercent + wornPercent}%`,
                     width: `${consumablePercent}%`,
@@ -108,18 +108,18 @@ export function SummaryMicroBars() {
             </span>
           </div>
           <div className="flex items-baseline justify-between gap-2">
-            <span className="font-mono text-[10px] tracking-widest text-consumable uppercase md:text-xs">
+            <span className="text-consumable font-mono text-[10px] tracking-widest uppercase md:text-xs">
               Consumables
             </span>
-            <span className="shrink-0 font-mono text-xs text-consumable tabular-nums md:text-sm">
+            <span className="text-consumable shrink-0 font-mono text-xs tabular-nums md:text-sm">
               {formatWeight(summary.consumables)}
             </span>
           </div>
           <div className="flex items-baseline justify-between gap-2">
-            <span className="font-mono text-[10px] tracking-widest text-worn uppercase md:text-xs">
+            <span className="text-worn font-mono text-[10px] tracking-widest uppercase md:text-xs">
               Worn
             </span>
-            <span className="shrink-0 font-mono text-xs text-worn tabular-nums md:text-sm">
+            <span className="text-worn shrink-0 font-mono text-xs tabular-nums md:text-sm">
               {formatWeight(summary.worn)}
             </span>
           </div>
