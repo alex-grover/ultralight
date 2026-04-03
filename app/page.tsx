@@ -1,11 +1,12 @@
 import { cookies } from 'next/headers'
-
 import { GearList } from '@/components/gear-list'
 import { Header } from '@/components/header'
 import { SummaryMicroBars } from '@/components/summary-micro-bars'
 import { UNIT_COOKIE, THEME_COOKIE, isValidUnit, isValidTheme } from '@/lib/cookies'
 import { ThemeProvider } from '@/lib/theme-context'
 import { UnitProvider } from '@/lib/unit-context'
+
+export const runtime = 'edge'
 
 export default async function Home() {
   const cookieStore = await cookies()
