@@ -9,8 +9,7 @@ const _geistMono = Geist_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Ultralight',
-  description:
-    "Don't pack your fears. A minimalist gear list app for ultralight backpackers.",
+  description: "Don't pack your fears.",
   generator: 'v0.app',
   metadataBase: new URL('https://ultralight.alexgrover.me'),
   keywords: [
