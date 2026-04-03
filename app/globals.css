@@ -10,10 +10,10 @@
   --border: light-dark(oklch(0.922 0 0), oklch(0.269 0 0));
   --ring: light-dark(oklch(0.708 0 0), oklch(0.439 0 0));
   --radius: 0.625rem;
-  --worn: light-dark(oklch(0.623 0.214 259.815), oklch(0.707 0.165 254.624));
-  --worn-bar: light-dark(oklch(0.623 0.214 259.815 / 0.6), oklch(0.707 0.165 254.624 / 0.6));
-  --consumable: light-dark(oklch(0.521 0.131 159.579), oklch(0.707 0.165 162.48));
-  --consumable-bar: light-dark(oklch(0.521 0.131 159.579 / 0.6), oklch(0.707 0.165 162.48 / 0.6));
+  --worn: light-dark(oklch(0.46 0.17 260), oklch(0.75 0.14 255));
+  --worn-bar: light-dark(oklch(0.46 0.17 260 / 0.6), oklch(0.75 0.14 255 / 0.6));
+  --consumable: light-dark(oklch(0.42 0.1 160), oklch(0.75 0.14 163));
+  --consumable-bar: light-dark(oklch(0.42 0.1 160 / 0.6), oklch(0.75 0.14 163 / 0.6));
 }
 
 @theme inline {
