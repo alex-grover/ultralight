@@ -150,10 +150,10 @@ export const categories: Category[] = [
         quantity: 1,
       },
       {
-        item: 'pants',
-        name: 'Vuori Meta',
+        item: 'shorts',
+        name: 'Vuori',
         classification: 'worn',
-        weight: 447.7,
+        weight: 136.4,
         quantity: 1,
       },
       {
