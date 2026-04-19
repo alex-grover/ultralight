@@ -92,9 +92,9 @@ export const categories: Category[] = [
       },
       {
         item: 'pillow',
-        name: 'Exped Ultra',
+        name: 'S2S',
         classification: 'base',
-        weight: 51,
+        weight: 57.4,
         quantity: 1,
       },
     ],
