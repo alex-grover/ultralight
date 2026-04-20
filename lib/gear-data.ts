@@ -146,14 +146,14 @@ export const categories: Category[] = [
         item: 'shirt',
         name: 'REI Flash',
         classification: 'worn',
-        weight: 170.1,
+        weight: 176.9,
         quantity: 1,
       },
       {
         item: 'pants',
         name: 'Patagonia Terrebonne',
         classification: 'worn',
-        weight: 170.1,
+        weight: 175.7,
         quantity: 1,
       },
       {
