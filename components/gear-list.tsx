@@ -2,10 +2,14 @@
 
 import { Shirt, Droplet } from 'lucide-react'
 
-import { categories } from '@/lib/gear-data'
+import type { Category } from '@/lib/gear-data'
 import { useUnit } from '@/lib/unit-context'
 
-export function GearList() {
+type GearListProps = {
+  categories: Category[]
+}
+
+export function GearList({ categories }: GearListProps) {
   const { formatWeight } = useUnit()
 
   const getClassificationIcon = (classification: string) => {

@@ -2,10 +2,14 @@
 
 import { useState } from 'react'
 
-import { categories, computeSummary, computeCategoryBreakdown } from '@/lib/gear-data'
+import { computeSummary, computeCategoryBreakdown, type Category } from '@/lib/gear-data'
 import { useUnit } from '@/lib/unit-context'
 
-export function SummaryMicroBars() {
+type SummaryMicroBarsProps = {
+  categories: Category[]
+}
+
+export function SummaryMicroBars({ categories }: SummaryMicroBarsProps) {
   const { formatWeight } = useUnit()
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null)
 

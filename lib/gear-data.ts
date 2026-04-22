@@ -13,7 +13,12 @@ export type Category = {
   items: Item[]
 }
 
-export const categories: Category[] = [
+export type GearList = {
+  name: string
+  categories: Category[]
+}
+
+const summerCategories: Category[] = [
   {
     name: 'Backpack',
     items: [
@@ -429,6 +434,32 @@ export const categories: Category[] = [
     ],
   },
 ]
+
+export const gearLists: GearList[] = [
+  {
+    name: 'Summer',
+    categories: summerCategories,
+  },
+  {
+    name: 'Shoulder Season',
+    categories: [
+      {
+        name: 'Sleep',
+        items: [
+          {
+            item: 'bag',
+            name: '20°F down sleeping bag',
+            classification: 'base',
+            weight: 900,
+            quantity: 1,
+          },
+        ],
+      },
+    ],
+  },
+]
+
+export const categories: Category[] = summerCategories
 
 export function computeSummary(cats: Category[]) {
   let baseWeight = 0

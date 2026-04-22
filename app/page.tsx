@@ -1,8 +1,7 @@
 import { cookies } from 'next/headers'
 
-import { GearList } from '@/components/gear-list'
+import { GearListSwitcher } from '@/components/gear-list-switcher'
 import { Header } from '@/components/header'
-import { SummaryMicroBars } from '@/components/summary-micro-bars'
 import { UNIT_COOKIE, isValidUnit } from '@/lib/cookies'
 import { UnitProvider } from '@/lib/unit-context'
 
@@ -17,10 +16,7 @@ export default async function Home() {
       <div className="bg-background min-h-screen">
         <Header />
         <main className="mx-auto max-w-2xl px-4 py-8">
-          <SummaryMicroBars />
-          <div className="mt-12">
-            <GearList />
-          </div>
+          <GearListSwitcher />
         </main>
       </div>
     </UnitProvider>
