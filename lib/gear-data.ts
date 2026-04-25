@@ -407,9 +407,16 @@ export const categories: Category[] = [
       },
       {
         item: 'bottle',
-        name: 'Smartwater 1L',
+        name: 'HydraPak Stow 1L',
         classification: 'base',
-        weight: 40,
+        weight: 51,
+        quantity: 1,
+      },
+      {
+        item: 'flask',
+        name: 'HydraPak PocketFlask 500ml',
+        classification: 'base',
+        weight: 32,
         quantity: 2,
       },
       {
