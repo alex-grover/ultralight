@@ -407,16 +407,16 @@ export const categories: Category[] = [
       },
       {
         item: 'bottle',
-        name: 'HydraPak Stow 1L',
+        name: 'HydraPak Seeker 2L',
         classification: 'base',
-        weight: 51,
+        weight: 77.4,
         quantity: 1,
       },
       {
         item: 'flask',
-        name: 'HydraPak PocketFlask 500ml',
+        name: 'BD HydraPak 500ml',
         classification: 'base',
-        weight: 32,
+        weight: 46,
         quantity: 2,
       },
       {
