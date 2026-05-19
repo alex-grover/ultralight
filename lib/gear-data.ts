@@ -19,7 +19,7 @@ export const categories: Category[] = [
     items: [
       {
         item: 'backpack',
-        name: 'MYOG 25L Prickly Gorse',
+        name: 'MYOG 25L',
         classification: 'base',
         weight: 316.4,
         quantity: 1,
@@ -117,13 +117,6 @@ export const categories: Category[] = [
         quantity: 1,
       },
       {
-        item: 'puffy',
-        name: 'EE Torrid',
-        classification: 'base',
-        weight: 234.9,
-        quantity: 1,
-      },
-      {
         item: 'rain jacket',
         name: 'Emergency poncho',
         classification: 'base',
@@ -179,9 +172,9 @@ export const categories: Category[] = [
       },
       {
         item: 'watch',
-        name: 'Automatic',
+        name: 'Coros Pace 4',
         classification: 'worn',
-        weight: 125,
+        weight: 32,
         quantity: 1,
       },
     ],
