@@ -8,7 +8,7 @@ export function Header() {
           {/* Main title block */}
           <div>
             <h1 className="text-foreground text-xl font-semibold tracking-tight md:text-2xl">
-              <span className="font-normal">[</span>ultralight<span className="font-normal">]</span>
+              [ultralight]
             </h1>
           </div>
 
