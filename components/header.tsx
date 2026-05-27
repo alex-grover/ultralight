@@ -7,11 +7,9 @@ export function Header() {
         <div className="flex items-center justify-between gap-4">
           {/* Main title block */}
           <div>
-            <h1 className="text-foreground text-3xl font-light tracking-tight md:text-4xl">
-              ULTRA
-              <span className="font-semibold">LIGHT</span>
+            <h1 className="text-foreground text-xl font-semibold tracking-tight md:text-2xl">
+              [ultralight]
             </h1>
-            <div className="bg-foreground mt-1 h-px w-16" />
           </div>
 
           <UnitSelector />

@@ -8,22 +8,22 @@ const _geist = Geist({ subsets: ['latin'] })
 const _geistMono = Geist_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Ultralight',
+  title: 'ultralight',
   description: "Don't pack your fears.",
   generator: 'v0.app',
   metadataBase: new URL('https://ultralight.alexgrover.me'),
   keywords: ['ultralight', 'backpacking', 'hiking', 'gear list', 'pack weight', 'lighterpack'],
   authors: [{ name: 'Alex Grover' }],
   openGraph: {
-    title: 'Ultralight',
+    title: 'ultralight',
     description: "Don't pack your fears.",
-    siteName: 'Ultralight',
+    siteName: 'ultralight',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ultralight',
+    title: 'ultralight',
     description: "Don't pack your fears.",
   },
   icons: {
