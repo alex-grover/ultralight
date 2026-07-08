@@ -299,7 +299,7 @@ export const categories: Category[] = [
       },
       {
         item: 'storage',
-        name: 'Gallon ziplock',
+        name: 'Gallon ziploc',
         classification: 'base',
         weight: 8.5,
         quantity: 1,
@@ -324,10 +324,10 @@ export const categories: Category[] = [
         quantity: 1,
       },
       {
-        item: 'jar',
-        name: '20oz',
+        item: 'containex',
+        name: 'Ziploc Quart Stand-Up Freezer',
         classification: 'base',
-        weight: 69.3,
+        weight: 6.4,
         quantity: 1,
       },
       {
