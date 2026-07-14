@@ -137,9 +137,9 @@ export const categories: Category[] = [
       },
       {
         item: 'shirt',
-        name: 'REI Flash',
+        name: 'Path Projects',
         classification: 'worn',
-        weight: 176.9,
+        weight: 137,
         quantity: 1,
       },
       {
@@ -151,9 +151,9 @@ export const categories: Category[] = [
       },
       {
         item: 'underwear',
-        name: 'Lululemon',
+        name: 'Path Projects',
         classification: 'worn',
-        weight: 64.6,
+        weight: 67.9,
         quantity: 1,
       },
       {
@@ -324,7 +324,7 @@ export const categories: Category[] = [
         quantity: 1,
       },
       {
-        item: 'containex',
+        item: 'container',
         name: 'Ziploc Quart Stand-Up Freezer',
         classification: 'base',
         weight: 6.4,
@@ -400,9 +400,9 @@ export const categories: Category[] = [
       },
       {
         item: 'bottle',
-        name: 'HydraPak Seeker 2L',
+        name: 'Igneous NOBO',
         classification: 'base',
-        weight: 77.4,
+        weight: 67.7,
         quantity: 1,
       },
       {
