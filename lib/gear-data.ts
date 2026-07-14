@@ -233,7 +233,7 @@ export const categories: Category[] = [
         item: 'tp',
         name: '1/2 roll + 2 ziplock bags',
         classification: 'base',
-        weight: 48.1,
+        weight: 33,
         quantity: 1,
       },
       {
@@ -400,9 +400,9 @@ export const categories: Category[] = [
     items: [
       {
         item: 'filter',
-        name: 'Sawyer Mini w/ bag',
+        name: 'Sawyer Mini',
         classification: 'base',
-        weight: 59.3,
+        weight: 48.5,
         quantity: 1,
       },
       {
