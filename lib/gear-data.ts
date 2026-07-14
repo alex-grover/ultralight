@@ -52,7 +52,7 @@ export const categories: Category[] = [
       },
       {
         item: 'poles',
-        name: '3FUL C1 (pair)',
+        name: '3F UL C1 (pair)',
         classification: 'worn',
         weight: 364.4,
         quantity: 1,
