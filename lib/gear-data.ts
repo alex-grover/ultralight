@@ -19,9 +19,9 @@ export const categories: Category[] = [
     items: [
       {
         item: 'backpack',
-        name: 'MYOG 25L',
+        name: 'MYOG',
         classification: 'base',
-        weight: 316.4,
+        weight: 259.7,
         quantity: 1,
       },
       {
